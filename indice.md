@@ -24,6 +24,8 @@ Este índice proporciona una visión general de todos los documentos disponibles
 - [[Cloudflare R2]]
 - [[Venue (Recinto/Espacio)]]
 - [[Entradas y E-Tickets]]
+- [[Nano Banana]]
+- [[Storybook]]
 
 ## Documentos de Soporte (Relacionados)
 
