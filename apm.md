@@ -1,12 +1,9 @@
+
+
 ---
 title: APM
 date: 2026-04-27
-tags:
-  - apm
-  - monitoreo
-  - rendimiento
-  - tracing
-  - observabilidad
+tags: [apm, monitoreo, rendimiento]
 ---
 
 # APM (Application Performance Monitoring)

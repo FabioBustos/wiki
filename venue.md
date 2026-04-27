@@ -1,6 +1,6 @@
 ---
 title: Venue (Recinto/Espacio)
-date: 2024-01-15
+date: 2026-04-27
 tags:
   - venue
   - ubicacion
@@ -17,6 +17,7 @@ related:
   - [[COMUNAS_CHILE]]
   - [[useVenueSelector]]
   - [[VenueSelector]]
+---
 ---
 
 # Venue (Recinto/Espacio)

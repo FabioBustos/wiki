@@ -1,3 +1,9 @@
+---
+title: Documentación de Proyecto
+date: 2026-04-27
+tags: [documentacion, proyecto]
+---
+
 # Documentación de Proyecto
 
 ## Definición
