@@ -10,7 +10,7 @@ obsidian_ui: true
 
 ## Definición
 
-**NestJS** es un framework progresivo de Node.js para construir aplicaciones del lado del servidor eficientes, escalables y confiables. Está construido con TypeScript y combina elementos de programación orientada a objetos (OOP), programación funcional reactiva (FRP) y programación funcional. Utiliza una arquitectura modular inspirada en Angular, lo que facilita la organización del código y la creación de aplicaciones empresariales.
+**NestJS** es un framework progresivo de Node.js para construir aplicaciones del lado del servidor eficientes, escalables y confiables. Está construido con [[typescript]] y combina elementos de programación orientada a objetos (OOP), programación funcional reactiva (FRP) y programación funcional. Utiliza una arquitectura modular inspirada en Angular, lo que facilita la organización del código y la creación de aplicaciones empresariales.
 
 > [!info] Conceptos Clave
 > -   **Módulos**: Clases decoradas con `@Module()` que organizan la aplicación en bloques funcionales.
@@ -26,7 +26,7 @@ obsidian_ui: true
 
 ## Uso en el Sistema de Ticketera
 
-NestJS es el framework principal para el desarrollo de nuestro backend. Lo utilizamos para construir la API RESTful que sirve al frontend [[Next.js]], así como para manejar la lógica de negocio, la interacción con la base de datos y la integración con servicios externos.
+NestJS es el framework principal para el desarrollo de nuestro backend. Lo utilizamos para construir la [[api-rest-especificacion|API RESTful]] que sirve al frontend [[nextjs]], así como para manejar la lógica de negocio, la interacción con la base de datos y la integración con servicios externos.
 
 ### Estructura del Proyecto Backend
 
@@ -72,7 +72,7 @@ venta-entradas-v2-backend/
 -   **Microservicios**: Soporte nativo para arquitecturas de microservicios, permitiendo dividir la aplicación en servicios más pequeños y manejables.
 
 ### [!success] Productividad del Desarrollador
--   **TypeScript de Primera Clase**: Aprovecha las ventajas de TypeScript para un código más seguro y fácil de mantener.
+-   **[[typescript]] de Primera Clase**: Aprovecha las ventajas de TypeScript para un código más seguro y fácil de mantener.
 -   **CLI Potente**: Nest CLI acelera el desarrollo con generadores de código para módulos, controladores, servicios, etc.
 -   **Documentación Excelente**: La documentación oficial es exhaustiva y fácil de seguir.
 
@@ -83,14 +83,14 @@ venta-entradas-v2-backend/
 
 ## Integración con Otros Servicios
 
--   **[[Next.js]]**: Nuestro frontend se comunica con la API de NestJS.
--   **MongoDB**: Base de datos principal para la persistencia de datos, integrada a través de `@nestjs/mongoose`.
--   **[[Sentry]]**: Para monitoreo de errores y rendimiento en el backend.
--   **[[Cloudflare R2]]**: Integración para el almacenamiento de objetos (imágenes, tickets) a través de un servicio de almacenamiento.
--   **[[Docker]]**: Para contenerizar la aplicación NestJS en desarrollo y producción.
--   **[[Railway]] / [[Seenode]]**: Plataformas de despliegue para la aplicación NestJS.
--   **[[JWT]]**: Utilizado para la autenticación y autorización de usuarios.
--   **[[Ollama]]**: Potencial integración para tareas de procesamiento de lenguaje natural internas.
+-   **[[nextjs]]**: Nuestro frontend se comunica con la API de NestJS.
+-   **[[base-de-datos-mongodb|MongoDB]]**: Base de datos principal para la persistencia de datos, integrada a través de `@nestjs/mongoose`.
+-   **[[sentry]]**: Para monitoreo de errores y rendimiento en el backend.
+-   **[[cloudflare-r2]]**: Integración para el almacenamiento de objetos (imágenes, tickets) a través de un servicio de almacenamiento.
+-   **[[docker]]**: Para contenerizar la aplicación NestJS en desarrollo y producción.
+-   **[[railway]] / [[seenode]]**: Plataformas de despliegue para la aplicación NestJS.
+-   **[[jwt]]**: Utilizado para la autenticación y autorización de usuarios.
+-   **[[ollama]]**: Potencial integración para tareas de procesamiento de lenguaje natural internas.
 
 ## Mejores Prácticas de Implementación
 
@@ -107,12 +107,12 @@ venta-entradas-v2-backend/
 
 ### [!tip] Manejo de Errores
 -   Implementar filtros de excepciones globales o a nivel de controlador para manejar errores de forma consistente.
--   Reportar errores a [[Sentry]] con contexto relevante.
+-   Reportar errores a [[sentry]] con contexto relevante.
 
 ### [!tip] Seguridad
 -   Implementar guards para proteger las rutas y asegurar la autenticación y autorización.
 -   Validar y sanitizar todas las entradas del usuario para prevenir ataques de inyección.
--   Utilizar [[JWT]] para la autenticación basada en tokens.
+-   Utilizar [[jwt]] para la autenticación basada en tokens.
 
 ## Solución de Problemas Comunes
 
@@ -129,7 +129,7 @@ venta-entradas-v2-backend/
     -   Optimizar consultas a la base de datos (índices, evitar N+1).
     -   Implementar caching (ej. con Redis).
     -   Utilizar interceptors para medir el tiempo de respuesta y detectar cuellos de botella.
-    -   Monitorear con [[Sentry]] y [[APM]].
+    -   Monitorear con [[sentry]] y [[apm]].
 
 ### [!warning] Errores de CORS
 -   **Síntoma**: El frontend no puede hacer solicitudes al backend debido a errores de CORS.
@@ -149,17 +149,17 @@ venta-entradas-v2-backend/
 
 ## Relación con Otros Conceptos del Sistema
 
-- [[Node.js]] - Entorno de ejecución de NestJS.
-- [[TypeScript]] - Lenguaje de programación de NestJS.
-- [[MongoDB]] - Base de datos principal.
-- [[Next.js]] - Frontend que consume la API de NestJS.
-- [[Docker]] - Contenerización de la aplicación.
-- [[Railway]] / [[Seenode]] - Plataformas de despliegue.
-- [[Sentry]] / [[APM]] - Monitoreo de errores y rendimiento.
-- [[Cloudflare R2]] - Almacenamiento de objetos.
-- [[JWT]] - Autenticación y autorización.
-- [[API REST - Especificación]] - Diseño de la API.
-- [[Arquitectura-de-microservicios]] - Soporte nativo de NestJS.
+- [[nodejs]] - Entorno de ejecución de NestJS.
+- [[typescript]] - Lenguaje de programación de NestJS.
+- [[base-de-datos-mongodb]] - Base de datos principal.
+- [[nextjs]] - Frontend que consume la API de NestJS.
+- [[docker]] - Contenerización de la aplicación.
+- [[railway]] / [[seenode]] - Plataformas de despliegue.
+- [[sentry]] / [[apm]] - Monitoreo de errores y rendimiento.
+- [[cloudflare-r2]] - Almacenamiento de objetos.
+- [[jwt]] - Autenticación y autorización.
+- [[api-rest-especificacion]] - Diseño de la API.
+- [[arquitectura-de-microservicios]] - Soporte nativo de NestJS.
 
 > [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
 > *Última actualización: 2026-04-27*

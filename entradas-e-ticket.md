@@ -8,10 +8,10 @@ tags:
   - eventos
   - sistema
 related:
-  - "[[Taxonomía-de-eventos]]"
-  - "[[Procesos-de-validación]]"
-  - "[[Integración-de-sistemas-pago]]"
-  - "[[Medidas-de-seguridad]]"
+  - "[[taxonomia-de-eventos]]"
+  - "[[procesos-de-validacion]]"
+  - "[[integracion-de-sistemas-pago]]"
+  - "[[medidas-de-seguridad]]"
 ---
 
 # Entradas y E-Tickets
@@ -38,7 +38,7 @@ Un **e-ticket** (entrada electrónica) es una versión digital de una entrada tr
 
 ### Por Formato de Entrega
 
-- **Mobile Ticket**: Envío directo a aplicación móvil o wallet ([[Apple-Google-Pay|Apple/Google Pay]])
+- **Mobile Ticket**: Envío directo a aplicación móvil o wallet ([[apple-google-pay|Apple/Google Pay]])
 - **Email Ticket**: Envío vía correo electrónico con archivo adjunto o link
 - **SMS Ticket**: Envío mediante mensaje de texto con código alfanumérico
 - **Impreso en Casa**: PDF descargable para auto-impresión
@@ -291,7 +291,9 @@ graph TD
 
 > [!example] Enlaces Relacionados
 > Consulte estos documentos para información complementaria:
-> - [[Taxonomía-de-eventos]] - Para entender la clasificación de eventos
-> - [[Procesos-de-validación]] - Detalles técnicos de los procesos de validación
-> - [[Integración-de-sistemas-pago]] - Información sobre integración con pasarelas de pago
-> - [[Medidas-de-seguridad]] - Especificaciones de seguridad aplicables
+> - [[taxonomia-de-eventos]] - Para entender la clasificación de eventos
+> - [[procesos-de-validacion]] - Detalles técnicos de los procesos de validación
+> - [[integracion-de-sistemas-pago]] - Información sobre integración con pasarelas de pago
+> - [[medidas-de-seguridad]] - Especificaciones de seguridad aplicables
+
+(End of file - total 297 lines)

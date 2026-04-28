@@ -10,11 +10,11 @@ Este documento describe las estrategias y patrones para la integración entre el
 
 ## Definición
 
-La **Integración con Backend** se refiere a cómo el frontend (desarrollado en [[Next.js]]) se comunica y consume los servicios y datos proporcionados por el backend (desarrollado en [[NestJS]]). Una integración robusta es clave para una experiencia de usuario fluida y una funcionalidad completa.
+La **Integración con Backend** se refiere a cómo el frontend (desarrollado en [[nextjs]]) se comunica y consume los servicios y datos proporcionados por el backend (desarrollado en [[nestjs]]). Una integración robusta es clave para una experiencia de usuario fluida y una funcionalidad completa.
 
 ## Principios Clave
 
-1.  **API RESTful**: El backend expone una API RESTful bien definida para que el frontend interactúe con ella.
+1.  **[[api-rest-especificacion|API RESTful]]**: El backend expone una API RESTful bien definida para que el frontend interactúe con ella.
 2.  **Comunicación Clara**: Definir contratos claros (tipos, esquemas) para las solicitudes y respuestas de la API.
 3.   **Manejo de Errores**: Implementar estrategias consistentes para manejar errores de la API en el frontend.
 4.   **Seguridad**: Asegurar que la comunicación sea segura (HTTPS) y que las solicitudes estén autenticadas/autorizadas.
@@ -27,7 +27,7 @@ La **Integración con Backend** se refiere a cómo el frontend (desarrollado en 
 El frontend realiza llamadas HTTP directas a los endpoints del backend.
 
 -   **Herramientas**: `fetch` API, `axios`.
--   **Ejemplo (Frontend Next.js)**:
+-   **Ejemplo (Frontend [[nextjs]])**:
     ```typescript
     // pages/api/events.ts (o en componentes/servicios)
     async function fetchEvents() {
@@ -49,16 +49,16 @@ El frontend realiza llamadas HTTP directas a los endpoints del backend.
     -   Gestionar variables de entorno (`NEXT_PUBLIC_API_URL`) para la URL base del backend.
     -   Implementar manejo de errores y estados de carga en la UI.
 
-### 2. Comunicación en Tiempo Real (WebSockets)
+### 2. Comunicación en Tiempo Real ([[websockets]])
 
 Para funcionalidades que requieren actualizaciones instantáneas (ej. notificaciones, chat en vivo).
 
--   **Tecnología**: WebSockets (implementado en el backend NestJS, consumido en el frontend).
--   **Ejemplo**: El backend puede usar [[NestJS]] Gateway para manejar conexiones WebSocket. El frontend utiliza la API de WebSocket del navegador o bibliotecas como `socket.io-client`.
+-   **Tecnología**: WebSockets (implementado en el backend [[nestjs]], consumido en el frontend).
+-   **Ejemplo**: El backend puede usar [[nestjs]] Gateway para manejar conexiones WebSocket. El frontend utiliza la API de WebSocket del navegador o bibliotecas como `socket.io-client`.
 
 ### 3. Almacenamiento de Archivos
 
--   **Subida Directa a R2**: El frontend obtiene una URL firmada del backend y sube el archivo directamente a [[Cloudflare R2]].
+-   **Subida Directa a R2**: El frontend obtiene una URL firmada del backend y sube el archivo directamente a [[cloudflare-r2]].
 -   **Proxy a través del Backend**: El frontend envía el archivo al backend, que luego lo sube a R2. Menos eficiente pero puede ser útil si se requiere procesamiento intermedio.
 
 ## Manejo de Errores
@@ -77,24 +77,24 @@ Para funcionalidades que requieren actualizaciones instantáneas (ej. notificaci
       }
     }
     ```
--   **Reporte a Sentry**: Capturar errores de red o de la API en el frontend y backend usando [[Sentry]].
+-   **Reporte a Sentry**: Capturar errores de red o de la API en el frontend y backend usando [[sentry]].
 
 ## Seguridad
 
 -   **HTTPS**: Toda la comunicación debe ser sobre HTTPS.
--   **Autenticación**: Uso de JWT (JSON Web Tokens) u otros mecanismos para verificar la identidad del usuario.
+-   **Autenticación**: Uso de [[jwt]] (JSON Web Tokens) u otros mecanismos para verificar la identidad del usuario.
 -   **Autorización**: Verificar que el usuario autenticado tenga permisos para realizar la acción solicitada.
 -   **Validación de Entrada**: El backend debe validar rigurosamente todos los datos recibidos del frontend.
 
 ## Relación con Otros Conceptos
 
-- [[API REST - Especificación]]
-- [[NestJS]]
-- [[Next.js]]
-- [[JWT]]
-- [[Sentry]]
-- [[Cloudflare R2]]
-- [[WebSockets]]
+- [[api-rest-especificacion]]
+- [[nestjs]]
+- [[nextjs]]
+- [[jwt]]
+- [[sentry]]
+- [[cloudflare-r2]]
+- [[websockets]]
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*

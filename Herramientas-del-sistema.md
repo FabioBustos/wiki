@@ -45,10 +45,10 @@ El sistema ejecuta esta llamada y devuelve el resultado al agente, que luego lo 
 
 ## Relación con Otros Conceptos
 
-- [[Agentes-especializados]]
-- [[Skills]]
-- [[Modelo de Contexto (MCP)]]
-- [[Flujos-de-trabajo]]
+- [[agentes-especializados]]
+- [[skills]]
+- [[modelo-de-contexto-mcp]]
+- [[flujos-de-trabajo]]
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*

@@ -2,6 +2,7 @@
 title: Cloudflare Workers
 date: 2026-04-27
 tags: [cloudflare, workers, edge, serverless, funciones, rendimiento]
+alias: [Cloudflare Workers]
 ---
 
 # Cloudflare Workers
@@ -25,7 +26,7 @@ Cloudflare Workers puede ser utilizado para optimizar y extender la funcionalida
 
 ### 1. Optimización de Contenido y Activos
 
--   **Redimensionamiento de Imágenes al Vuelo**: Transformar imágenes almacenadas en [[Cloudflare R2]] para diferentes tamaños y formatos (ej. WebP) según el dispositivo del usuario.
+-   **Redimensionamiento de Imágenes al Vuelo**: Transformar imágenes almacenadas en [[cloudflare-r2]] para diferentes tamaños y formatos (ej. WebP) según el dispositivo del usuario.
 -   **Personalización de Contenido**: Modificar respuestas HTML o JSON antes de que lleguen al usuario, inyectando datos específicos o realizando A/B testing.
 -   **Manejo de Activos Estáticos**: Servir archivos estáticos directamente desde el edge, reduciendo la carga en el servidor de origen.
 
@@ -54,15 +55,15 @@ Cloudflare Workers puede ser utilizado para optimizar y extender la funcionalida
 
 ### [!success] Flexibilidad y Control
 -   **Lógica Personalizada**: Permite implementar lógica de negocio específica en el edge.
--   **Integración con Cloudflare**: Se integra perfectamente con otros servicios de Cloudflare como [[Cloudflare R2]], CDN y DNS.
+-   **Integración con Cloudflare**: Se integra perfectamente con otros servicios de Cloudflare como [[cloudflare-r2]], CDN y DNS.
 
 ## Integración con Otros Servicios
 
--   **[[Cloudflare R2]]**: Utilizado como almacenamiento de objetos para activos que Workers pueden transformar o servir.
--   **[[Next.js]]**: Workers pueden optimizar la entrega de activos o actuar como una capa de API para el frontend.
--   **[[NestJS]]**: Workers pueden actuar como un proxy o una capa de seguridad delante del backend.
--   **[[API REST - Especificación]]**: Workers pueden implementar lógica de API en el edge.
--   **[[Seguridad-de-datos]]**: Workers pueden aplicar políticas de seguridad y validación en el edge.
+-   **[[cloudflare-r2]]**: Utilizado como almacenamiento de objetos para activos que Workers pueden transformar o servir.
+-   **[[nextjs]]**: Workers pueden optimizar la entrega de activos o actuar como una capa de API para el frontend.
+-   **[[nestjs]]**: Workers pueden actuar como un proxy o una capa de seguridad delante del backend.
+-   **[[api-rest-especificacion]]**: Workers pueden implementar lógica de API en el edge.
+-   **[[seguridad-de-datos]]**: Workers pueden aplicar políticas de seguridad y validación en el edge.
 
 ## Mejores Prácticas de Implementación
 
@@ -88,11 +89,11 @@ Cloudflare Workers puede ser utilizado para optimizar y extender la funcionalida
 
 ## Relación con Otros Conceptos del Sistema
 
-- [[Arquitectura-de-nube]] - Workers son un componente clave de nuestra arquitectura serverless.
-- [[Optimización de Imágenes]] - Uso de Workers para transformación de imágenes.
-- [[Manejo-de-activos-de-eventos]] - Workers pueden optimizar la entrega de activos.
-- [[Seguridad-de-datos]] - Workers pueden implementar lógica de seguridad en el edge.
-- [[Costo-de-infraestructura]] - Modelo de pago por uso eficiente.
+- [[arquitectura-de-nube]] - Workers son un componente clave de nuestra arquitectura serverless.
+- [[optimizacion-de-imagenes]] - Uso de Workers para transformación de imágenes.
+- [[manejo-de-activos-de-eventos]] - Workers pueden optimizar la entrega de activos.
+- [[seguridad-de-datos]] - Workers pueden implementar lógica de seguridad en el edge.
+- [[costo-de-infraestructura]] - Modelo de pago por uso eficiente.
 
 > [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
 > *Última actualización: 2026-04-27*

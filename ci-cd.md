@@ -51,23 +51,23 @@ graph TD
 
 -   **Repositorio de Código**: GitHub, GitLab, Bitbucket.
 -   **Plataformas CI/CD**: GitHub Actions, GitLab CI, Jenkins, CircleCI, Travis CI.
--   **Contenerización**: [[Docker]] para empaquetar aplicaciones.
--   **Plataformas de Despliegue**: [[Railway]], [[Seenode]] (que a menudo tienen CI/CD integrado o se integran con plataformas externas).
--   **Monitoreo**: [[Sentry]] para monitorear errores post-despliegue.
+-   **Contenerización**: [[docker]] para empaquetar aplicaciones.
+-   **Plataformas de Despliegue**: [[railway]], [[seenode]] (que a menudo tienen CI/CD integrado o se integran con plataformas externas).
+-   **Monitoreo**: [[sentry]] para monitorear errores post-despliegue.
 -   **Testing**: Jest (unitarias), Cypress/Playwright (E2E).
--   **Buildpacks**: Utilizados por [[Railway]] y [[Seenode]] para simplificar la construcción de imágenes.
+-   **Buildpacks**: Utilizados por [[railway]] y [[seenode]] para simplificar la construcción de imágenes.
 
 ## Integración en el Proyecto
 
 Nuestro pipeline de CI/CD se configura para:
 
-1.  **Backend ([[NestJS]])**:
+1.  **Backend ([[nestjs]])**:
     -   Al hacer push a la rama `main`, se ejecuta el pipeline.
-    -   Se construyen las imágenes [[Docker]].
+    -   Se construyen las imágenes [[docker]].
     -   Se ejecutan pruebas unitarias y de integración.
     -   Se despliega automáticamente a staging.
     -   Tras aprobación manual, se despliega a producción.
-2.  **Frontend ([[Next.js]])**:
+2.  **Frontend ([[nextjs]])**:
     -   Similar al backend, con pasos adicionales para la construcción de assets estáticos y pruebas de interfaz de usuario.
 
 ## Beneficios
@@ -79,7 +79,7 @@ Nuestro pipeline de CI/CD se configura para:
 
 ### [!success] Mejora de la Calidad
 -   **Detección Temprana de Bugs**: Las pruebas automatizadas identifican problemas antes de que lleguen a producción.
--   **Consistencia del Código**: Asegura que el código cumpla con los estándares de [[Calidad-de-Código]].
+-   **Consistencia del Código**: Asegura que el código cumpla con los estándares de [[calidad-de-codigo]].
 
 ### [!success] Colaboración y Productividad
 -   **Feedback Rápido**: Los desarrolladores reciben feedback instantáneo sobre sus cambios.
@@ -87,13 +87,13 @@ Nuestro pipeline de CI/CD se configura para:
 
 ## Relación con Otros Conceptos
 
-- [[Docker]] - Contenerización de aplicaciones para despliegue.
-- [[Buildpacks]] - Abstracción de la construcción de imágenes.
-- [[Railway]] / [[Seenode]] - Plataformas de despliegue.
-- [[Sentry]] - Monitoreo post-despliegue.
-- [[NestJS]] / [[Next.js]] - Aplicaciones que se construyen y despliegan.
-- [[Calidad-de-Código]] - Asegurada a través de pruebas automatizadas.
-- [[Flujos-de-trabajo]] - El pipeline de CI/CD define el flujo de trabajo de entrega.
+- [[docker]] - Contenerización de aplicaciones para despliegue.
+- [[buildpacks]] - Abstracción de la construcción de imágenes.
+- [[railway]] / [[seenode]] - Plataformas de despliegue.
+- [[sentry]] - Monitoreo post-despliegue.
+- [[nestjs]] / [[nextjs]] - Aplicaciones que se construyen y despliegan.
+- [[calidad-de-codigo]] - Asegurada a través de pruebas automatizadas.
+- [[flujos-de-trabajo]] - El pipeline de CI/CD define el flujo de trabajo de entrega.
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*

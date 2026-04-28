@@ -34,7 +34,10 @@ Aunque el DSN del frontend es público por diseño (necesario para que el SDK fu
 
 ## Relación con Otros Conceptos
 
-- [[Sentry]] - Plataforma que utiliza el DSN para recibir eventos
-- [[Variables-de-entorno]] - Cómo gestionamos los DSNs de forma segura
-- [[Release]] - Información de versión que se envía junto con los eventos
-- [[Environment]] - Indicador de entorno que se incluye en los eventos
+- [[sentry]] - Plataforma que utiliza el DSN para recibir eventos
+- [[variables-de-entorno]] - Cómo gestionamos los DSNs de forma segura
+- [[release]] - Información de versión que se envía junto con los eventos
+- [[environment]] - Indicador de entorno que se incluye en los eventos
+
+> [!note] Documento creado como placeholder.
+> *Última actualización: 2026-04-27*

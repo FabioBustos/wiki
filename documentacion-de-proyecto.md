@@ -46,15 +46,15 @@ Una documentación de proyecto efectiva es crucial para nuestro sistema de gesti
 
 Este concepto se relaciona con varios aspectos de nuestra arquitectura y procesos:
 
-- [[NotebookLM]] - Herramienta para investigación y síntesis de documentación
-- [[Gestion-del-Conocimiento]] - Parte de la estrategia general para capturar y compartir conocimiento institucional
-- [[Onboarding-de-Equipo]] - Facilita la integración rápida de nuevos miembros
-- [[Revision-de-Requisitos]] - Ayuda en la validación y comprensión de requisitos funcionales y no técnicos
-- [[Retroalimentacion-de-Usuarios]] - Facilita el análisis de entrevistas, encuestas y tickets de soporte
-- [[Comunicacion-Equipo]] - Mejora la eficiencia en el intercambio de información entre miembros
-- [[Aprendizaje-Continuo]] - Apoya el desarrollo continuo de habilidades y conocimiento del equipo
-- [[Control-de-Calidad]] - Puede asistir en la creación de casos de prueba y verificación de especificaciones
-- [[Gestion-de-Cambios]] - Ayuda a entender el impacto de modificaciones propuestas revisando documentación relacionada
+- [[notebooklm]] - Herramienta para investigación y síntesis de documentación
+- [[gestion-del-conocimiento]] - Parte de la estrategia general para capturar y compartir conocimiento institucional
+- [[onboarding-de-equipo]] - Facilita la integración rápida de nuevos miembros
+- [[revision-de-requisitos]] - Ayuda en la validación y comprensión de requisitos funcionales y no técnicos
+- [[retroalimentacion-de-usuarios]] - Facilita el análisis de entrevistas, encuestas y tickets de soporte
+- [[comunicacion-equipo]] - Mejora la eficiencia en el intercambio de información entre miembros
+- [[aprendizaje-continuo]] - Apoya el desarrollo continuo de habilidades y conocimiento del equipo
+- [[control-de-calidad]] - Puede asistir en la creación de casos de prueba y verificación de especificaciones
+- [[gestion-de-cambios]] - Ayuda a entender el impacto de modificaciones propuestas revisando documentación relacionada
 
 > [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
 > *Última actualización: 2026-04-27*

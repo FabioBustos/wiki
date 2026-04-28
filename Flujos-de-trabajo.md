@@ -66,16 +66,16 @@ graph TD
 
 ## Herramientas que Apoyan los Flujos de Trabajo
 
--   **[[OpenCode]]**: Con sus [[Agentes-especializados]] y [[Skills]], puede automatizar o asistir en varios pasos de estos flujos.
+-   **[[opencode]]**: Con sus [[agentes-especializados]] y [[skills]], puede automatizar o asistir en varios pasos de estos flujos.
 -   **Git/GitHub**: Para control de versiones y gestión de ramas.
 -   **Jira/Trello**: Para seguimiento de tareas y estado.
--   **[[Sentry]]**: Para monitoreo post-despliegue y detección de bugs.
+-   **[[sentry]]**: Para monitoreo post-despliegue y detección de bugs.
 -   **Obsidian**: Para la [[documentacion-de-proyecto|documentación]] de los flujos y el conocimiento generado.
 
 ## Relación con Otros Conceptos
 
-- [[Agentes-especializados]]
-- [[Skills]]
+- [[agentes-especializados]]
+- [[skills]]
 - [[documentacion-de-proyecto]]
 - [[control-de-calidad]]
 - [[gestion-de-cambios]]

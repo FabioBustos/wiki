@@ -28,18 +28,18 @@ En nuestro proyecto, Docker es fundamental para garantizar un entorno de desarro
 
 Utilizamos `docker-compose.yml` para orquestar nuestros servicios de desarrollo local:
 
--   **Backend (NestJS)**: Contenedor para la aplicación NestJS.
--   **Frontend (Next.js)**: Contenedor para la aplicación Next.js.
--   **Base de Datos (MongoDB)**: Contenedor para la instancia de MongoDB.
+-   **Backend ([[nestjs]])**: Contenedor para la aplicación NestJS.
+-   **Frontend ([[nextjs]])**: Contenedor para la aplicación Next.js.
+-   **Base de Datos ([[base-de-datos-mongodb|MongoDB]])**: Contenedor para la instancia de MongoDB.
 
 Esto asegura que todos los desarrolladores trabajen con las mismas versiones de Node.js, MongoDB y otras dependencias, eliminando problemas de "funciona en mi máquina".
 
 ### 2. Despliegue en Producción y Staging
 
-Aunque plataformas como [[Railway]] y [[Seenode]] pueden usar buildpacks para desplegar aplicaciones sin Dockerfiles explícitos, el uso de Dockerfiles nos da un control más granular sobre el entorno de ejecución.
+Aunque plataformas como [[railway]] y [[seenode]] pueden usar buildpacks para desplegar aplicaciones sin Dockerfiles explícitos, el uso de Dockerfiles nos da un control más granular sobre el entorno de ejecución.
 
--   **Backend (NestJS)**: Se construye una imagen Docker a partir de un `Dockerfile` en el directorio `desarrollo/venta-entradas-v2-backend`.
--   **Frontend (Next.js)**: Se construye una imagen Docker a partir de un `Dockerfile` en el directorio `desarrollo/venta-entradas-v2-frontend`.
+-   **Backend ([[nestjs]])**: Se construye una imagen Docker a partir de un `Dockerfile` en el directorio `desarrollo/venta-entradas-v2-backend`.
+-   **Frontend ([[nextjs]])**: Se construye una imagen Docker a partir de un `Dockerfile` en el directorio `desarrollo/venta-entradas-v2-frontend`.
 
 Estas imágenes se despliegan en nuestros entornos de staging y producción, garantizando la consistencia entre el desarrollo y la producción.
 
@@ -77,11 +77,11 @@ graph TD
 
 ## Integración con Otros Servicios
 
--   **[[Railway]] / [[Seenode]]**: Plataformas de despliegue que soportan imágenes Docker o buildpacks que internamente usan contenedores.
--   **[[NestJS]] / [[Next.js]]**: Nuestras aplicaciones backend y frontend se empaquetan en contenedores Docker.
--   **MongoDB**: La base de datos se ejecuta en un contenedor Docker en desarrollo local.
--   **[[CI-CD]]**: Los pipelines de integración y despliegue continuo construyen y publican imágenes Docker.
--   **[[Cloudflare R2]]**: Aunque no directamente relacionado con Docker, las aplicaciones en contenedores interactúan con R2 para almacenamiento de objetos.
+-   **[[railway]] / [[seenode]]**: Plataformas de despliegue que soportan imágenes Docker o buildpacks que internamente usan contenedores.
+-   **[[nestjs]] / [[nextjs]]**: Nuestras aplicaciones backend y frontend se empaquetan en contenedores Docker.
+-   **[[base-de-datos-mongodb|MongoDB]]**: La base de datos se ejecuta en un contenedor Docker en desarrollo local.
+-   **[[ci-cd]]**: Los pipelines de integración y despliegue continuo construyen y publican imágenes Docker.
+-   **[[cloudflare-r2]]**: Aunque no directamente relacionado con Docker, las aplicaciones en contenedores interactúan con R2 para almacenamiento de objetos.
 
 ## Mejores Prácticas de Implementación
 
@@ -127,13 +127,13 @@ graph TD
 
 ## Relación con Otros Conceptos del Sistema
 
-- [[Railway]] - Plataforma de despliegue que utiliza contenedores.
-- [[Seenode]] - Plataforma de despliegue que utiliza contenedores.
-- [[NestJS]] - Nuestro backend se ejecuta en contenedores Docker.
-- [[Next.js]] - Nuestro frontend se ejecuta en contenedores Docker.
-- [[CI-CD]] - Los pipelines de CI/CD construyen y despliegan imágenes Docker.
-- [[MongoDB]] - Se ejecuta en un contenedor Docker en desarrollo.
-- [[Arquitectura-de-nube]] - Docker es un pilar de nuestra estrategia de nube.
+- [[railway]] - Plataforma de despliegue que utiliza contenedores.
+- [[seenode]] - Plataforma de despliegue que utiliza contenedores.
+- [[nestjs]] - Nuestro backend se ejecuta en contenedores Docker.
+- [[nextjs]] - Nuestro frontend se ejecuta en contenedores Docker.
+- [[ci-cd]] - Los pipelines de CI/CD construyen y despliegan imágenes Docker.
+- [[base-de-datos-mongodb]] - Se ejecuta en un contenedor Docker en desarrollo.
+- [[arquitectura-de-nube]] - Docker es un pilar de nuestra estrategia de nube.
 
 > [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
 > *Última actualización: 2026-04-27*

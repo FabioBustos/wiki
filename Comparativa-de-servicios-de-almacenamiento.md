@@ -20,10 +20,10 @@ La elección del servicio de almacenamiento adecuado es crucial para la arquitec
 | **Cargo por Egress** | ❌ No | ✅ Sí | ✅ Sí | ✅ Sí |
 | **Compatibilidad S3 API** | ✅ Total | ✅ Nativa | ✅ Interoperable | ✅ Interoperable |
 | **Integración CDN** | ✅ Nativa (Cloudflare) | ⚠️ CloudFront (costo extra) | ⚠️ Cloud CDN | ⚠️ Azure CDN |
-| **Precio Almacenamiento** | 💰 Bajo | 💰 Medio-Alto | 💰 Medio | 💰 Medio |
+| **Precio almacenamiento** | 💰 Bajo | 💰 Medio-Alto | 💰 Medio | 💰 Medio |
 | **Latencia Global** | ✅ Alta (CDN) | Varía por región | Varía por región | Varía por región |
 | **Complejidad Config.** | 😊 Baja | 😊 Baja | 😊 Baja | 😊 Medio |
-| **Herramientas Familiares** | ✅ Excelente | ✅ Excelente | ✅ Bueno | ✅ Bueno |
+| **Herramientas familiares** | ✅ Excelente | ✅ Excelente | ✅ Bueno | ✅ Bueno |
 | **Nivel Gratuito** | Generoso (para empezar) | Generoso (para empezar) | Generoso (para empezar) | Generoso (para empezar) |
 | **Casos de Uso Ideales** | Activos web, backups, multimedia sin egress | Apps AWS, data lakes, backups | Apps GCP, data lakes, ML | Apps Azure, backups, archivos |
 
@@ -32,7 +32,7 @@ La elección del servicio de almacenamiento adecuado es crucial para la arquitec
 ### Cloudflare R2
 
 -   **Ventaja Principal**: Eliminación de cargos por salida de datos ([[egress]]). Esto lo hace ideal para servir activos web, imágenes, videos y cualquier dato que se acceda frecuentemente desde Internet.
--   **Integración**: Funciona de manera nativa con la red global de Cloudflare, incluyendo [[cloudflare-workers|Workers]] y CDN, lo que puede mejorar el rendimiento y simplificar la arquitectura.
+-   **Integración**: Funciona de manera nativa con la red global de Cloudflare, incluyendo [[cloudflare-workers]] y CDN, lo que puede mejorar el rendimiento y simplificar la arquitectura.
 -   **Compatibilidad**: Su compatibilidad total con la API S3 permite una migración relativamente sencilla desde AWS S3.
 
 ### Amazon S3
@@ -63,7 +63,7 @@ Para nuestro sistema de ticketera, donde servimos activamente imágenes de event
 - [[almacenamiento-de-archivos]]
 - [[costo-de-infraestructura]]
 - [[egress]]
-- [[cdn]] (I will create this file later if it doesn't exist)
+- [[cdn]]
 - [[arquitectura-de-nube]]
 
 > [!note] Documento creado como placeholder.

@@ -57,16 +57,16 @@ La **Calidad de Código** se refiere a las características deseables de un cód
 -   **Prettier**: Formateador de código.
 -   **Jest**: Framework de pruebas para JavaScript/TypeScript.
 -   **Cypress/Playwright**: Herramientas para pruebas E2E.
--   **[[Sentry]]**: Para monitoreo de errores en producción, lo que ayuda a identificar problemas de calidad.
--   **[[APM]]**: Para monitorear el rendimiento del código.
--   **[[Agentes-especializados|@code-reviewer]]**: Agente especializado en la revisión de código.
+-   **[[sentry]]**: Para monitoreo de errores en producción, lo que ayuda a identificar problemas de calidad.
+-   **[[apm]]**: Para monitorear el rendimiento del código.
+-   **[[agentes-especializados]]**: Agente especializado en la revisión de código.
 
 ## Relación con Otros Conceptos
 
-- [[NestJS]] / [[Next.js]] - Frameworks donde aplicamos estas prácticas.
-- [[TypeScript]] - Lenguaje que mejora la calidad del código con tipado estático.
-- [[Docker]] - Asegura un entorno consistente para la ejecución de pruebas.
-- [[CI-CD]] - Automatiza la ejecución de pruebas y linters.
+- [[nestjs]] / [[nextjs]] - Frameworks donde aplicamos estas prácticas.
+- [[typescript]] - Lenguaje que mejora la calidad del código con tipado estático.
+- [[docker]] - Asegura un entorno consistente para la ejecución de pruebas.
+- [[ci-cd]] - Automatiza la ejecución de pruebas y linters.
 - [[aprendizaje-continuo]] - Fomenta la mejora de habilidades y la calidad del código.
 - [[control-de-calidad]] - La calidad del código es un pilar del control de calidad.
 

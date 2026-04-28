@@ -6,8 +6,6 @@ tags: [eventos, activos, gestión, r2, backend, frontend]
 
 # Manejo de Activos de Eventos
 
-Este documento describe cómo se gestionan los activos (imágenes, videos, etc.) asociados a los eventos en el sistema.
-
 ## Definición
 
 Los **Activos de Eventos** son todos los archivos multimedia y documentos relacionados con un evento específico, que necesitan ser almacenados, gestionados y servidos a los usuarios o al personal del evento.
@@ -32,11 +30,11 @@ Los **Activos de Eventos** son todos los archivos multimedia y documentos relaci
 
 ## Arquitectura de Almacenamiento
 
-Utilizamos [[Cloudflare R2]] para el almacenamiento de todos los activos de eventos debido a su [[Egress|ausencia de cargos por salida de datos]] y su integración con la red de Cloudflare para una entrega de alto rendimiento.
+Utilizamos [[cloudflare-r2]] para el almacenamiento de todos los activos de eventos debido a su [[egress|ausencia de cargos por salida de datos]] y su integración con la red de Cloudflare para una entrega de alto rendimiento.
 
 ### Estructura de Almacenamiento (Prefijos)
 
-Los activos se organizan dentro del bucket R2 utilizando prefixes para facilitar la gestión y el control de acceso:
+Los activos se organizan dentro del bucket R2 utilizando [[prefix|prefixes]] para facilitar la gestión y el control de acceso:
 
 -   `event-images/{eventId}/{timestamp}-{randomString}.{ext}`: Para imágenes promocionales y carteles.
 -   `event-videos/{eventId}/{timestamp}-{randomString}.{ext}`: Para videos.
@@ -46,32 +44,32 @@ Los activos se organizan dentro del bucket R2 utilizando prefixes para facilitar
 
 ## Flujo de Gestión
 
-1.  **Subida**: Los activos son subidos por organizadores de eventos o personal autorizado, generalmente a través de una interfaz en el backend o directamente al frontend con URLs firmadas.
-2.  **Almacenamiento**: Los archivos se guardan en [[Cloudflare R2]] con una clave (incluyendo prefix) y metadata relevante.
+1.  **Subida**: Los activos son subidos por organizadores de eventos o personal autorizado, generalmente a través de una interfaz en el backend o directamente al frontend con [[url-firmada|URLs firmadas]].
+2.  **Almacenamiento**: Los archivos se guardan en [[cloudflare-r2]] con una clave (incluyendo prefix) y [[metadata|metadata]] relevante.
 3.  **Referencia**: La URL pública o la clave del activo se almacena en la base de datos, asociada al evento correspondiente.
 4.  **Entrega**:
     -   El frontend solicita la URL del activo al backend o la obtiene directamente si es pública.
     -   Los activos se sirven eficientemente a través del CDN de Cloudflare.
-    -   Para imágenes, se pueden aplicar optimizaciones al vuelo usando [[Cloudflare Images]] o [[Cloudflare Workers]].
+    -   Para imágenes, se pueden aplicar optimizaciones al vuelo usando [[configuracion-de-cloudflare-images|Cloudflare Images]] o [[cloudflare-workers|Cloudflare Workers]].
 
 ## Consideraciones de Seguridad
 
--   **Acceso Controlado**: Los activos sensibles (ej. datos de pago, información privada) deben ser privados y accesibles solo mediante [[URL Firmada]] o a través de endpoints de backend protegidos.
+-   **Acceso Controlado**: Los activos sensibles (ej. datos de pago, información privada) deben ser privados y accesibles solo mediante [[url-firmada|URL Firmada]] o a través de endpoints de backend protegidos.
 -   **Validación de Archivos**: Validar tipos de archivo y tamaños para prevenir subidas maliciosas.
--   **[[Políticas de Ciclo de Vida]]**: Configurar reglas para eliminar activos obsoletos o temporales.
+-   **[[politica-de-ciclo-de-vida|Políticas de Ciclo de Vida]]**: Configurar reglas para eliminar activos obsoletos o temporales.
 
 ## Relación con Otros Conceptos
 
-- [[Cloudflare R2]]
-- [[Entradas y E-Tickets]]
-- [[Venue (Recinto/Espacio)]]
-- [[Optimización de Imágenes]]
-- [[URL Firmada]]
-- [[Prefix]]
-- [[Metadata]]
-- [[Seguridad-de-datos]]
-- [[Backend (NestJS)]]
-- [[Frontend (Next.js)]]
+- [[cloudflare-r2]]
+- [[entradas-e-ticket]]
+- [[venue]]
+- [[optimizacion-de-imagenes]]
+- [[url-firmada]]
+- [[prefix]]
+- [[metadata]]
+- [[seguridad-de-datos]]
+- [[nestjs]]
+- [[nextjs]]
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*

@@ -37,29 +37,29 @@ Las **Mejoras de Capacidad** se refieren a las acciones tomadas para aumentar la
 ### 3. Caching
 
 -   Implementar caché a diferentes niveles (CDN, caché de aplicación, caché de base de datos).
--   Utilizar [[Cloudflare R2]] como origen para CDN para activos estáticos.
+-   Utilizar [[cloudflare-r2]] como origen para CDN para activos estáticos.
 
 ### 4. Monitoreo y Observabilidad
 
--   Utilizar [[APM]] y [[Sentry]] para identificar problemas de rendimiento y errores en tiempo real.
+-   Utilizar [[apm]] y [[sentry]] para identificar problemas de rendimiento y errores en tiempo real.
 -   Recopilar métricas clave de rendimiento y uso de recursos.
 -   Configurar alertas para detectar degradaciones de rendimiento.
 
 ### 5. Infraestructura y Despliegue
 
 -   Optimizar la configuración de servidores y contenedores.
--   Utilizar plataformas como [[Railway]] o [[Seenode]] que ofrecen escalado automático y gestión de recursos.
+-   Utilizar plataformas como [[railway]] o [[seenode]] que ofrecen escalado automático y gestión de recursos.
 -   Implementar redes privadas para comunicación eficiente entre servicios.
 
 ## Relación con Otros Conceptos
 
-- [[APM]]
-- [[Sentry]]
-- [[Cloudflare R2]]
-- [[Railway]]
-- [[Seenode]]
-- [[Arquitectura-de-microservicios]]
-- [[Observabilidad]]
+- [[apm]]
+- [[sentry]]
+- [[cloudflare-r2]]
+- [[railway]]
+- [[seenode]]
+- [[arquitectura-de-microservicios]]
+- [[observabilidad]]
 - [[control-de-calidad]]
 
 > [!note] Documento creado como placeholder.

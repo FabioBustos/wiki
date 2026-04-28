@@ -10,7 +10,7 @@ Este documento describe el concepto de "Herramienta" dentro del Modelo de Contex
 
 ## Definición
 
-En el contexto del [[Modelo de Contexto (MCP)|Modelo de Contexto Protocol (MCP)]], una **Herramienta** es un tipo de [[Capacidad (MCP)|Capacidad]] que representa una función ejecutable que un [[Cliente MCP|Cliente MCP]] (agente de IA) puede invocar para realizar una acción específica. A diferencia de los [[Recurso (MCP)|Recursos]] (que son de solo lectura), las herramientas pueden modificar el estado del sistema, interactuar con servicios externos o realizar operaciones complejas.
+En el contexto del [[modelo-de-contexto-mcp]], una **Herramienta** es un tipo de [[capacidad-mcp]] que representa una función ejecutable que un [[cliente-mcp]] (agente de IA) puede invocar para realizar una acción específica. A diferencia de los [[recurso-mcp]] (que son de solo lectura), las herramientas pueden modificar el estado del sistema, interactuar con servicios externos o realizar operaciones complejas.
 
 ## Características de una Herramienta
 
@@ -22,7 +22,7 @@ En el contexto del [[Modelo de Contexto (MCP)|Modelo de Contexto Protocol (MCP)]
 
 ## Ejemplos de Herramientas en el Proyecto
 
-En nuestro sistema, las [[Herramientas del Sistema|Herramientas del Sistema]] son ejemplos de herramientas que los agentes pueden invocar:
+En nuestro sistema, las [[herramientas-del-sistema]] son ejemplos de herramientas que los agentes pueden invocar:
 
 -   `write`: Para crear o modificar archivos.
 -   `edit`: Para realizar cambios específicos en el contenido de un archivo.
@@ -30,23 +30,23 @@ En nuestro sistema, las [[Herramientas del Sistema|Herramientas del Sistema]] so
 -   `skill`: Para cargar conocimientos especializados.
 -   `task`: Para delegar tareas a otros agentes.
 
-Además, los [[Servidor MCP|Servidores MCP]] como Playwright o Chrome DevTools exponen herramientas para interactuar con navegadores web.
+Además, los [[servidor-mcp]] como Playwright o Chrome DevTools exponen herramientas para interactuar con navegadores web.
 
 ## Flujo de Uso
 
-1.  El [[Cliente MCP]] decide que necesita realizar una acción y selecciona la herramienta adecuada.
+1.  El [[cliente-mcp]] decide que necesita realizar una acción y selecciona la herramienta adecuada.
 2.  El Cliente MCP construye una solicitud de ejecución de herramienta, incluyendo los parámetros necesarios.
-3.  El [[Servidor MCP]] recibe la solicitud, valida los parámetros y ejecuta la herramienta.
+3.  El [[servidor-mcp]] recibe la solicitud, valida los parámetros y ejecuta la herramienta.
 4.  El Servidor MCP devuelve el resultado de la ejecución (éxito, error, datos de salida) al Cliente MCP.
 
 ## Relación con Otros Conceptos
 
-- [[Modelo de Contexto (MCP)]]
-- [[Capacidad (MCP)]]
-- [[Cliente MCP]]
-- [[Servidor MCP]]
-- [[Recurso (MCP)]]
-- [[Herramientas del Sistema]]
+- [[modelo-de-contexto-mcp]]
+- [[capacidad-mcp]]
+- [[cliente-mcp]]
+- [[servidor-mcp]]
+- [[recurso-mcp]]
+- [[herramientas-del-sistema]]
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*

@@ -86,7 +86,7 @@ Permitir que los agentes accedan a:
 - Conectar con servicios de CI/CD para despliegues
 - Interactuar con plataformas de monitoreo y logging
 - Acceder a sistemas de gestión de tickets o proyectos
-- Utilizar servicios de almacenamiento de objetos (como Cloudflare R2)
+- Utilizar servicios de almacenamiento de objetos (como [[cloudflare-r2]])
 
 ## Beneficios para el Proyecto
 
@@ -96,7 +96,7 @@ Permitir que los agentes accedan a:
 - Capacidad para realizar tareas complejas que requieren múltiples sistemas
 
 ### [!success] Seguridad Mejorada
-- Ejecución en entornos aislados (sandboxing)
+- Ejecución en entornos aislados ([[sandboxing-mcp|sandboxing]])
 - Control preciso sobre qué capacidades tiene cada agente
 - Auditoría de todas las interacciones con herramientas externas
 - Posibilidad de revocar o limitar acceso según sea necesario
@@ -124,8 +124,8 @@ Si decidimos integrar MCP en nuestro sistema, podríamos considerar:
 - Servidor de herramientas de desarrollo (npm, git, testing frameworks)
 
 ### 2. Clientes MCP en Agentes
-- Modificar los agentes especializados para que puedan actuar como clientes MCP
-- Proveer capacidades específicas según el tipo de agente:
+- Modificar los [[agentes-especializados]] para que puedan actuar como [[cliente-mcp|clientes MCP]]
+- Proveer [[capacidad-mcp|capacidades]] específicas según el tipo de agente:
   - `@nest-developer`: Acceso a herramientas de desarrollo NestJS, testing, DB
   - `@next-developer`: Acceso a herramientas de Next.js, testing frontend, build
   - `@doc-writer`: Acceso a herramientas de documentación, markdown, búsqueda
@@ -143,14 +143,14 @@ Si decidimos integrar MCP en nuestro sistema, podríamos considerar:
 
 Este protocolo se relaciona con varios aspectos de nuestra arquitectura:
 
-- [[Agentes-especializados]] - Los agentes que podrían actuar como clientes MCP
-- [[Herramientas-del-sistema]] - Cómo MCP se integra con las herramientas existentes (skill, read, write, etc.)
-- [[Skills]] - Cómo las skills podrían beneficiarse o integrarse con capacidades MCP
-- [[Integración-con-backend]] - Cómo MCP facilitaría interacciones más seguras y estandarizadas con el backend
-- [[Integración-con-frontend]] - Posibles usos en el frontend para tareas de build o testing
-- [[Arquitectura-de-microservicios]] - MCP como forma de comunicarse entre servicios de manera estandarizada
-- [[Seguridad-de-sistema]] - El enfoque de MCP en seguridad y aislamiento
-- [[Extensibilidad-de-plataforma]] - Cómo MCP prepara el sistema para futuras integraciones
+- [[agentes-especializados]] - Los agentes que podrían actuar como [[cliente-mcp|clientes MCP]]
+- [[herramientas-del-sistema]] - Cómo MCP se integra con las herramientas existentes (skill, read, write, etc.)
+- [[skills]] - Cómo las skills podrían beneficiarse o integrarse con [[capacidad-mcp|capacidades MCP]]
+- [[integracion-con-backend]] - Cómo MCP facilitaría interacciones más seguras y estandarizadas con el backend
+- [[integracion-con-frontend]] - Posibles usos en el frontend para tareas de build o testing
+- [[arquitectura-de-microservicios]] - MCP como forma de comunicarse entre servicios de manera estandarizada
+- [[seguridad-de-datos]] - El enfoque de MCP en seguridad y aislamiento
+- [[extensibilidad-de-plataforma]] - Cómo MCP prepara el sistema para futuras integraciones
 
 ## Comparación con Enfoques Alternativos
 
@@ -158,7 +158,7 @@ Este protocolo se relaciona con varios aspectos de nuestra arquitectura:
 |----------------|-----|---------------------|------------------------|--------------|
 | **Estándar abierto** | ✅ Sí | ❌ No | ❌ No | ✅ Sí |
 | **Descubrimiento de capacidades** | ✅ Sí | ❌ No | ❌ No | ⚠️ Parcial (OpenAPI) |
-| **Ejecución segura** | ✅ Sí (sandboxing) | ❌ Depende de implementación | ❌ Riesgo alto | ✅ Sí (límite de API) |
+| **Ejecución segura** | ✅ Sí ([[sandboxing-mcp|sandboxing]]) | ❌ Depende de implementación | ❌ Riesgo alto | ✅ Sí (límite de API) |
 | **Extensibilidad** | ✅ Alta | ❌ Baja (recompilación) | ❌ Baja | ❌ Media |
 | **Interoperabilidad** | ✅ Alta | ❌ Baja | ❌ Baja | ✅ Alta |
 | **Complejidad de integración** | ⚠️ Media | ✅ Baja (inicial) | ⚠️ Media | ⚠️ Media |
@@ -169,14 +169,14 @@ Este protocolo se relaciona con varios aspectos de nuestra arquitectura:
 
 ## Glosario de Términos
 
-- **[[Cliente MCP]]**: Entidad (usualmente un LLM o agente) que solicita el uso de herramientas externas
-- **[[Servidor MCP]]**: Entidad que proporciona herramientas o capacidades externas accesibles mediante el protocolo
-- **[[Capacidad]]**: Funcionalidad específica que un servidor MCP ofrece (recurso, herramienta, prompt, etc.)
-- **[[Recurso]]**: Fuente de datos que puede leerse pero no modificarse directamente mediante MCP
-- **[[Herramienta]]**: Función ejecutable que realiza una acción específica y puede modificar estado
-- **[[Prompt]]**: Plantilla predefinida para interacciones comunes con un LLM
-- **[[Transporte]]**: Mecanismo de comunicación subyacente (stdio, HTTP/SSE, WebSocket)
-- **[[Sandboxing]]**: Técnica de aislamiento que restringe lo que una herramienta puede hacer
+- **[[cliente-mcp]]**: Entidad (usualmente un LLM o agente) que solicita el uso de herramientas externas
+- **[[servidor-mcp]]**: Entidad que proporciona herramientas o capacidades externas accesibles mediante el protocolo
+- **[[capacidad-mcp]]**: Funcionalidad específica que un servidor MCP ofrece (recurso, herramienta, prompt, etc.)
+- **[[recurso-mcp]]**: Fuente de datos que puede leerse pero no modificarse directamente mediante MCP
+- **[[herramienta-mcp]]**: Función ejecutable que realiza una acción específica y puede modificar estado
+- **[[prompt-mcp]]**: Plantilla predefinida para interacciones comunes con un LLM
+- **[[transporte-mcp]]**: Mecanismo de comunicación subyacente (stdio, HTTP/SSE, WebSocket)
+- **[[sandboxing-mcp]]**: Técnica de aislamiento que restringe lo que una herramienta puede hacer
 - **Capacidades negociadas**: El conjunto específico de herramientas que un cliente y servidor acuerdan usar
 - **Herramienta de sampling**: Mecanismo especial en MCP donde el servidor puede solicitar al cliente que genere texto
 - **Recurso suscrito**: Recurso para el cual un cliente puede recibir notificaciones de cambios
@@ -185,9 +185,9 @@ Este protocolo se relaciona con varios aspectos de nuestra arquitectura:
 ## Estado Actual y Recomendaciones
 
 En la actualidad, nuestro sistema no implementa MCP directamente, pero sí utiliza conceptos similares a través de:
-- **[[Skills]]**: Que proporcionan conocimientos especializados y workflows
+- **[[skills]]**: Que proporcionan conocimientos especializados y workflows
 - **Herramientas del sistema**: Como `read`, `write`, `bash` para operaciones de archivo y sistema
-- **[[Agentes-especializados]]**: Que tienen conocimientos profundos en dominios específicos
+- **[[agentes-especializados]]**: Que tienen conocimientos profundos en dominios específicos
 
 > [!tip] Consideraciones para futura adopción de MCP
 > 1. Evaluar si la complejidad añadida justifica los beneficios de estandarización y seguridad
