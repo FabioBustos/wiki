@@ -17,20 +17,20 @@ tags:
   - costos
   - integración
 related:
-  - "[[Almacenamiento-de-archivos]]"
-  - "[[Integración-con-backend]]"
-  - "[[Optimización-de-imágenes]]"
-  - "[[Manejo-de-activos-de-eventos]]"
-  - "[[Seguridad-de-datos]]"
-  - "[[Costo-de-infraestructura]]"
-  - "[[Arquitectura-de-nube]]"
-  - "[[Entradas-y-E-Tickets]]"
-  - "[[Venue]]"
-  - "[[Cloudflare-Workers]]"
-  - "[[Variables-de-entorno]]"
-  - "[[SDK-de-AWS]]"
-  - "[[Política-de-CORS]]"
-  - "[[Gestión-de-credenciales]]"
+- "[[almacenamiento-de-archivos]]"
+- "[[integracion-con-backend]]"
+- "[[optimizacion-de-imagenes]]"
+- "[[manejo-de-activos-de-eventos]]"
+- "[[seguridad-de-datos]]"
+- "[[costo-de-infraestructura]]"
+- "[[arquitectura-de-nube]]"
+- "[[entradas-e-ticket]]"
+- "[[venue]]"
+- "[[cloudflare-workers]]"
+- "[[variables-de-entorno]]"
+- "[[sdk-de-aws]]"
+- "[[politica-de-cors]]"
+- "[[gestion-de-credenciales]]"
 seealso:
   - "[[Comparativa-de-servicios-de-almacenamiento]]"
   - "[[Guía-de-integración-de-S3]]"
@@ -63,7 +63,7 @@ seealso:
 
 ## Casos de Uso en el Sistema de Ticketera
 
-En el contexto de nuestro sistema de gestión de tickets, Cloudflare R2 podría utilizarse para:
+En el contexto de nuestro sistema de gestión de tickets, [[cloudflare-r2]] podría utilizarse para:
 
 ### 1. Almacenamiento de Activos de Eventos
 - Imágenes de eventos (carteles, banners, fotos de artistas)
@@ -90,7 +90,7 @@ En el contexto de nuestro sistema de gestión de tickets, Cloudflare R2 podría 
 - Backups de bases de datos
 
 ### 5. Contenido Estático del Frontend
-- Builds de la aplicación Next.js (si se opta por servir estáticos desde R2)
+- Builds de la aplicación [[nextjs]] (si se opta por servir estáticos desde R2)
 - Bibliotecas de componentes compartidos
 - Fuentes tipográficas personalizadas
 - Iconos y assets de UI
@@ -114,10 +114,10 @@ En el contexto de nuestro sistema de gestión de tickets, Cloudflare R2 podría 
 
 ## Integración con el Tech Stack Actual
 
-### Backend (NestJS)
+### Backend ([[nestjs]])
 
 > [!tip] Despliegue en Railway
-> Cuando se despliegue el backend NestJS en [[Railway]], las credenciales de R2 se pueden configurar como variables de entorno en el panel de Railway, asegurando un despliegue seguro y reproducible. Además, Railway proporciona logs y métricas básicas que complementan el monitoreo más detallado de [[Sentry]].
+> Cuando se despliegue el backend [[nestjs]] en [[railway]], las credenciales de R2 se pueden configurar como [[variables-de-entorno]] en el panel de Railway, asegurando un despliegue seguro y reproducible. Además, Railway proporciona logs y métricas básicas que complementan el monitoreo más detallado de [[sentry]].
 
 #### Configuración del Cliente S3
 ```typescript
@@ -207,7 +207,7 @@ export class EventImageService {
 }
 ```
 
-### Frontend (Next.js)
+### Frontend ([[nextjs]])
 
 #### Subida Directa desde el Cliente (con firma de backend)
 ```typescript
@@ -222,7 +222,6 @@ export function UploadForm({ onUploadComplete }: UploadFormProps) {
   const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!file) return;
@@ -344,7 +343,7 @@ export default async function handler(
 
 > [!warning] Protección de Credenciales
 > - **Nunca expongan credencias en el frontend**: Las claves de acceso deben permanecer únicamente en el backend o en variables de entorno seguras
-> - **Use tokens de corta duración**: Para subidas directas desde el cliente, genere URLs firmadas con tiempo de expiración limitado (5-15 minutos)
+> - **Use tokens de corta duración**: Para subidas directas desde el cliente, genere [[url-firmada|URLs firmadas]] con tiempo de expiración limitado (5-15 minutos)
 > - **Implemente control de acceso basado en roles**: Diferentes niveles de permiso para subir, leer y eliminar archivos
 
 > [!warning] Validación de Archivos
@@ -353,7 +352,7 @@ export default async function handler(
 > - **Escaneo de malware**: Considere integrar escaneo de virus para archivos subidos por usuarios (especialmente importante para documentos de identificación)
 
 > [!warning] Configuración de Buckets
-> - **Privacidad por defecto**: Mantenga los buckets privados y use URLs firmadas o intermediarios para acceder al contenido
+> - **Privacidad por defecto**: Mantenga los [[bucket|buckets]] privados y use [[url-firmada|URLs firmadas]] o intermediarios para acceder al contenido
 > - **Reglas de CORS**: Configure apropiadamente si planea hacer solicitudes directas desde el navegador
 > - **Registro de acceso**: Active logs para monitoreo y auditoría de acceso a archivos sensibles
 
@@ -381,7 +380,7 @@ export default async function handler(
 ## Mejores Prácticas de Implementación
 
 > [!tip] Organización de Buckets
-> Considere usar prefixes (carpetas lógicas) en lugar de múltiples buckets:
+> Considere usar [[prefix|prefixes]] (carpetas lógicas) en lugar de múltiples [[bucket|buckets]]:
 > ```
 > ├── event-images/{eventId}/
 > ├── event-videos/{eventId}/
@@ -406,14 +405,14 @@ export default async function handler(
 > [!tip] Manejo de Versiones
 > Para activos que cambian frecuentemente:
 > - Incluya números de versión en el nombre del archivo
-> - O use metadata de objetos para tracking de versiones
-> - Considere políticas de ciclo de vida para eliminar versiones antiguas
+> - O use [[metadata|metadata]] de [[objeto|objetos]] para tracking de versiones
+> - Considere [[politica-de-ciclo-de-vida|políticas de ciclo de vida]] para eliminar versiones antiguas
 
 > [!tip] Monitoreo y Costos
 > - Configure alertas para uso inusual de almacenamiento o operaciones
 > - Revise periódicamente los costos (aunque R2 es económico, el uso descontrolado puede acumularse)
 > - Implemente limpieza automática de archivos temporales o expirados
-> - Integre con [[Sentry]] para monitoreo de errores en operaciones de almacenamiento (subidas, descargas, eliminaciones fallidas)
+> - Integre con [[sentry]] para monitoreo de errores en operaciones de almacenamiento (subidas, descargas, eliminaciones fallidas)
 
 ## Comparación con Alternativas
 
@@ -431,41 +430,41 @@ export default async function handler(
 
 Este servicio de almacenamiento se relaciona con varios aspectos de nuestra arquitectura:
 
-- [[Almacenamiento-de-archivos]] - Patrón general para manejo de archivos en el sistema
-- [[Integración-con-backend]] - Cómo los servicios de backend utilizan almacenamiento externo
-- [[Optimización-de-imágenes]] - Estrategias para servir imágenes eficientemente
-- [[Manejo-de-activos-de-eventos]] - Gestión específica de multimedia relacionada con eventos
-- [[Seguridad-de-datos]] - Protección de información sensible almacenada
-- [[Costo-de-infraestructura]] - Análisis de gastos operativos del sistema
-- [[Arquitectura-de-nube]] - Decisiones generales sobre proveedores de servicios en la nube
-- [[Entradas-y-E-Tickets]] - Almacenamiento de códigos QR y plantillas de tickets
-- [[Venue]] - Almacenamiento de imágenes y planos de venues
-- [[Cloudflare-Workers]] - Ejecutar lógica personalizada cerca del usuario
-- [[Variables-de-entorno]] - Gestión segura de credenciales y configuración
-- [[SDK-de-AWS]] - Bibliotecas utilizadas para interactuar con R2
-- [[Política-de-CORS]] - Configuración para permitir acceso desde dominios específicos
-- [[Gestión-de-credenciales]] - Prácticas seguras para manejar claves de acceso
-- [[Railway]] - Plataforma donde desplegamos nuestro backend NestJS que interactúa con R2 para el almacenamiento de activos
-- [[Sentry]] - Sistema que utilizamos para monitoreo de errores y rendimiento en las operaciones de R2 (subidas, descargas, eliminaciones) de nuestro sistema de ticketera
+- [[almacenamiento-de-archivos]] - Patrón general para manejo de archivos en el sistema
+- [[integracion-con-backend]] - Cómo los servicios de backend utilizan almacenamiento externo
+- [[optimizacion-de-imagenes]] - Estrategias para servir imágenes eficientemente
+- [[manejo-de-activos-de-eventos]] - Gestión específica de multimedia relacionada con eventos
+- [[seguridad-de-datos]] - Protección de información sensible almacenada
+- [[costo-de-infraestructura]] - Análisis de gastos operativos del sistema
+- [[arquitectura-de-nube]] - Decisiones generales sobre proveedores de servicios en la nube
+- [[entradas-e-ticket]] - Almacenamiento de códigos QR y plantillas de tickets
+- [[venue]] - Almacenamiento de imágenes y planos de venues
+- [[cloudflare-workers]] - Ejecutar lógica personalizada cerca del usuario
+- [[variables-de-entorno]] - Gestión segura de credenciales y configuración
+- [[sdk-de-aws]] - Bibliotecas utilizadas para interactuar con R2
+- [[politica-de-cors]] - Configuración para permitir acceso desde dominios específicos
+- [[gestion-de-credenciales]] - Prácticas seguras para manejar claves de acceso
+- [[railway]] - Plataforma donde desplegamos nuestro backend NestJS que interactúa con R2 para el almacenamiento de activos
+- [[sentry]] - Sistema que utilizamos para monitoreo de errores y rendimiento en las operaciones de R2 (subidas, descargas, eliminaciones) de nuestro sistema de ticketera
 
 ## Glosario de Términos
 
-- **[[Egress]]**: Transferencia de datos fuera de la red del proveedor de almacenamiento (lo que R2 no cobra)
-- **[[URL Firmada]]**: URL temporal que otorga permiso limitado para acceder a un objeto específico
-- **[[Prefix]]**: Organización lógica de objetos dentro de un bucket usando barras diagonales en las claves (similar a carpetas)
-- **[[Metadata]]**: Información adicional asociada a un objeto (como autor, fecha de creación, etc.)
-- **[[Política de Ciclo de Vida]]**: Reglas automáticas para transicionar o eliminar objetos basado en edad u otros criterios
-- **[[Multipart Upload]]**: Método para subir archivos grandes en partes simultáneas o secuenciales
-- **[[ETag]]**: Identificador único para una versión específica de un objeto (útil para detección de cambios)
-- **[[Versioning]]**: Capacidad de mantener múltiples versiones de un objeto cuando se sobrescribe
-- **[[CORS (Cross-Origin Resource Sharing)]]**: Mecanismo que permite o restringe solicitudes web desde diferentes orígenes
-- **[[Bucket]]**: Contenedor de almacenamiento en R2 donde se guardan los objetos
-- **[[Objeto]]**: Unidad individual de almacenamiento en R2 (un archivo con su metadata)
-- **[[Clave (Key)]]**: Identificador único de un objeto dentro de un bucket
-- **[[Region]]**: En R2 siempre se usa 'auto' ya que es global por diseño
-- **[[Endpoint]]**: URL del servicio R2 a la que se conectan las aplicaciones
-- **[[Access Key ID]]**: Parte de las credenciales para autenticación con R2
-- **[[Secret Access Key]]**: Parte secreta de las credenciales para autenticación con R2
+- **[[egress]]**: Transferencia de datos fuera de la red del proveedor de almacenamiento (lo que R2 no cobra)
+- **[[url-firmada]]**: URL temporal que otorga permiso limitado para acceder a un objeto específico
+- **[[prefix]]**: Organización lógica de objetos dentro de un bucket usando barras diagonales en las claves (similar a carpetas)
+- **[[metadata]]**: Información adicional asociada a un objeto (como autor, fecha de creación, etc.)
+- **[[politica-de-ciclo-de-vida]]**: Reglas automáticas para transicionar o eliminar objetos basado en edad u otros criterios
+- **[[multipart-upload]]**: Método para subir archivos grandes en partes simultáneas o secuenciales
+- **[[etag]]**: Identificador único para una versión específica de un objeto (útil para detección de cambios)
+- **[[versioning]]**: Capacidad de mantener múltiples versiones de un objeto cuando se sobrescribe
+- **[[cors]]**: Mecanismo que permite o restringe solicitudes web desde diferentes orígenes
+- **[[bucket]]**: Contenedor de almacenamiento en R2 donde se guardan los objetos
+- **[[objeto]]**: Unidad individual de almacenamiento en R2 (un archivo con su metadata)
+- **[[clave-key]]**: Identificador único de un objeto dentro de un bucket
+- **[[region]]**: En R2 siempre se usa 'auto' ya que es global por diseño
+- **[[endpoint]]**: URL del servicio R2 a la que se conectan las aplicaciones
+- **[[access-key-id]]**: Parte de las credenciales para autenticación con R2
+- **[[secret-access-key]]**: Parte secreta de las credenciales para autenticación con R2
 
 ## Diagrama de Arquitectura
 

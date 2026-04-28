@@ -64,11 +64,11 @@ Sentry ofrece funcionalidades de APM a través de:
 
 ## Relación con Otros Conceptos
 
-- [[Sentry]] - Plataforma que implementamos para APM y monitoreo de errores
-- [[Monitoreo-de-Rendimiento]] - Área más amplia que incluye APM
-- [[Observabilidad]] - Concepto que engloba métricas, traces y logs
-- [[Tracing]] - Técnica específica utilizada en APM
-- [[Métricas]] - Datos cuantitativos recopilados en APM
+- [[sentry]] - Plataforma que implementamos para APM y monitoreo de errores
+- [[monitoreo-de-rendimiento]] - Área más amplia que incluye APM
+- [[observabilidad]] - Concepto que engloba métricas, traces y logs
+- [[tracing]] - Técnica específica utilizada en APM
+- [[metricas]] - Datos cuantitativos recopilados en APM
 
 ## Mejores Prácticas
 

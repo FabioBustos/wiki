@@ -6,7 +6,7 @@ tags: [almacenamiento, comparativa, r2, s3, gcs, azure, costos, rendimiento]
 
 # Comparativa de Servicios de Almacenamiento
 
-Este documento compara diferentes servicios de almacenamiento de objetos, enfocándose en [[Cloudflare R2]], Amazon S3, Google Cloud Storage y Azure Blob Storage.
+Este documento compara diferentes servicios de almacenamiento de objetos, enfocándose en [[cloudflare-r2]], Amazon S3, Google Cloud Storage y Azure Blob Storage.
 
 ## Introducción
 
@@ -31,8 +31,8 @@ La elección del servicio de almacenamiento adecuado es crucial para la arquitec
 
 ### Cloudflare R2
 
--   **Ventaja Principal**: Eliminación de cargos por salida de datos (egress). Esto lo hace ideal para servir activos web, imágenes, videos y cualquier dato que se acceda frecuentemente desde Internet.
--   **Integración**: Funciona de manera nativa con la red global de Cloudflare, incluyendo Workers y CDN, lo que puede mejorar el rendimiento y simplificar la arquitectura.
+-   **Ventaja Principal**: Eliminación de cargos por salida de datos ([[egress]]). Esto lo hace ideal para servir activos web, imágenes, videos y cualquier dato que se acceda frecuentemente desde Internet.
+-   **Integración**: Funciona de manera nativa con la red global de Cloudflare, incluyendo [[cloudflare-workers|Workers]] y CDN, lo que puede mejorar el rendimiento y simplificar la arquitectura.
 -   **Compatibilidad**: Su compatibilidad total con la API S3 permite una migración relativamente sencilla desde AWS S3.
 
 ### Amazon S3
@@ -55,16 +55,16 @@ La elección del servicio de almacenamiento adecuado es crucial para la arquitec
 
 ## Recomendación para Nuestro Proyecto
 
-Para nuestro sistema de ticketera, donde servimos activamente imágenes de eventos, logos, tickets digitales y potencialmente otros activos multimedia, **Cloudflare R2 es la opción más estratégica debido a la eliminación de los cargos por salida de datos**. Esto puede resultar en ahorros significativos a medida que el sistema escala. La integración con la red de Cloudflare también puede mejorar el rendimiento de entrega de activos a nuestros usuarios.
+Para nuestro sistema de ticketera, donde servimos activamente imágenes de eventos, logos, tickets digitales y potencialmente otros activos multimedia, **[[cloudflare-r2]] es la opción más estratégica debido a la eliminación de los cargos por salida de datos**. Esto puede resultar en ahorros significativos a medida que el sistema escala. La integración con la red de Cloudflare también puede mejorar el rendimiento de entrega de activos a nuestros usuarios.
 
 ## Relación con Otros Conceptos
 
-- [[Cloudflare R2]]
-- [[Almacenamiento-de-archivos]]
-- [[Costo-de-infraestructura]]
-- [[Egress]]
-- [[CDN]]
-- [[Arquitectura-de-nube]]
+- [[cloudflare-r2]]
+- [[almacenamiento-de-archivos]]
+- [[costo-de-infraestructura]]
+- [[egress]]
+- [[cdn]] (I will create this file later if it doesn't exist)
+- [[arquitectura-de-nube]]
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*

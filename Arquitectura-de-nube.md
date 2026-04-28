@@ -24,28 +24,20 @@ La **Arquitectura de Nube** se refiere al diseño y la implementación de sistem
 ## Componentes de Nuestra Arquitectura en la Nube
 
 -   **Computación**:
-    -   **Backend**: [[NestJS]] desplegado en [[Railway]] o [[Seenode]].
-    -   **Frontend**: [[Next.js]] desplegado en [[Railway]] o [[Seenode]].
-    -   **Serverless/Edge**: [[Cloudflare Workers]] para lógica personalizada cerca del usuario.
+-   **Backend**: [[nestjs]] desplegado en [[railway]] o [[seenode]].
+-   **Frontend**: [[nextjs]] desplegado en [[railway]] o [[seenode]].
+-   **Serverless/Edge**: [[cloudflare-workers]] para lógica personalizada cerca del usuario.
 
 -   **Almacenamiento**:
-    -   **Objetos**: [[Cloudflare R2]] para activos de eventos, tickets, imágenes, etc.
-    -   **Bases de Datos**: Bases de datos gestionadas (MongoDB, PostgreSQL) proporcionadas por [[Railway]] o [[Seenode]].
-
--   **Red y Entrega**:
-    -   **CDN**: Red global de Cloudflare para entrega rápida de activos.
-    -   **DNS**: Gestión de dominios a través de Cloudflare.
-    -   **Redes Privadas**: Para comunicación segura entre servicios en [[Railway]] o [[Seenode]].
+    -   **Objetos**: [[cloudflare-r2]] para activos de eventos, tickets, imágenes, etc.
+    -   **Bases de Datos**: Bases de datos gestionadas (MongoDB, PostgreSQL) proporcionadas por [[railway]] o [[seenode]].
 
 -   **Monitoreo y Observabilidad**:
-    -   **Errores**: [[Sentry]] para monitoreo de errores y [[APM]].
-    -   **Logs**: Centralizados en [[Railway]] / [[Seenode]].
-    -   **Métricas**: Proporcionadas por las plataformas de despliegue y Sentry.
+    -   **Errores**: [[sentry]] para monitoreo de errores y [[apm]].
+    -   **Logs**: Centralizados en [[railway]] / [[seenode]].
 
 -   **Seguridad**:
-    -   **Firewall/WAF**: Servicios de Cloudflare.
-    -   **Gestión de Secrets**: Variables de entorno seguras en [[Railway]] / [[Seenode]].
-    -   **Autenticación/Autorización**: Implementada en el backend (ej. JWT).
+    -   **Gestión de Secrets**: Variables de entorno seguras en [[railway]] / [[seenode]].
 
 ## Beneficios
 
@@ -56,15 +48,15 @@ La **Arquitectura de Nube** se refiere al diseño y la implementación de sistem
 
 ## Relación con Otros Conceptos
 
--   [[Cloudflare R2]]
--   [[Railway]]
--   [[Seenode]]
--   [[Sentry]]
--   [[APM]]
--   [[NestJS]]
--   [[Next.js]]
--   [[Costo-de-infraestructura]]
--   [[Seguridad-de-datos]]
+-   [[cloudflare-r2]]
+-   [[railway]]
+-   [[seenode]]
+-   [[sentry]]
+-   [[apm]]
+-   [[nestjs]]
+-   [[nextjs]]
+-   [[costo-de-infraestructura]]
+-   [[seguridad-de-datos]]
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*
