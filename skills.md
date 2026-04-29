@@ -152,8 +152,8 @@ Obtener el contenido markdown limpio sin navegación, anuncios u otros elementos
 
 ## Glosario de Términos
 
-- **[[Skill]]**: Módulo especializado que proporciona instrucciones, workflows y recursos para tareas específicas
-- **[[Contexto]]**: El entorno de conocimiento actual del agente al que se añaden las instrucciones de la skill
+- **[[skill]]**: Módulo especializado que proporciona instrucciones, workflows y recursos para tareas específicas
+- **[[contexto]]**: El entorno de conocimiento actual del agente al que se añaden las instrucciones de la skill
 - **Herramienta skill**: El mecanismo mediante el cual los agentes cargan skills especializadas
 - **Recursos de skill**: Scripts, plantillas, referencias y otros materiales incluidos en una skill
 - **Workflow**: Proceso paso a paso proporcionado por una skill para completar un tipo específico de tarea
@@ -163,13 +163,13 @@ Obtener el contenido markdown limpio sin navegación, anuncios u otros elementos
 
 Este mecanismo de skills se relaciona con varios aspectos de nuestra arquitectura:
 
-- [[Agentes-especializados]] - Los agentes permanentes con especializaciones en dominios específicos
-- [[Herramientas-del-sistema]] - Las diversas herramientas disponibles para los agentes (skill, read, write, etc.)
-- [[Flujos-de-trabajo]] - Los procesos estandarizados para completar diferentes tipos de tareas
-- [[Mejoras-de-capacidad]] - Cómo el sistema extiende sus capacidades más allá del conocimiento básico
-- [[Especialización-temporal]] - El concepto de agregar conocimientos especializados según sea necesario
-- [[Reutilización-de-conocimiento]] - Cómo el conocimiento especializado puede ser usado por múltiples agentes
-- [[Plantillas-y-scripts]] - Los recursos prácticos incluidos en muchas skills para acelerar el trabajo
+- [[agentes-especializados]] - Los agentes permanentes con especializaciones en dominios específicos
+- [[herramientas-del-sistema]] - Las diversas herramientas disponibles para los agentes (skill, read, write, etc.)
+- [[flujos-de-trabajo]] - Los procesos estandarizados para completar diferentes tipos de tareas
+- [[mejoras-de-capacidad]] - Cómo el sistema extiende sus capacidades más allá del conocimiento básico
+- [[especializacion-temporal]] - El concepto de agregar conocimientos especializados según sea necesario
+- [[reutilizacion-de-conocimiento]] - Cómo el conocimiento especializado puede ser usado por múltiples agentes
+- [[plantillas-y-scripts]] - Los recursos prácticos incluidos en muchas skills para acelerar el trabajo
 
 > [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
 > *Última actualización: 2026-04-27*

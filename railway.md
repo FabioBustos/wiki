@@ -54,7 +54,7 @@ tags:
 
 ## Uso en el Sistema de Ticketera
 
-En nuestro proyecto, Railway se utiliza para desplegar tanto el frontend ([[venta-entradas-v2-frontend|Next.js]]) como el backend ([[venta-entradas-v2-backend|NestJS]]) junto con la base de datos MongoDB, aprovechando su capacidad para manejar múltiples servicios interconectados.
+En nuestro proyecto, Railway se utiliza para desplegar tanto el frontend ([[nextjs]]) como el backend ([[nestjs]]) junto con la base de datos MongoDB, aprovechando su capacidad para manejar múltiples servicios interconectados.
 
 ### Arquitectura de Despliegue
 
@@ -74,19 +74,19 @@ graph TD
 
 ### Servicios Desplegados
 
-#### 1. Frontend (Next.js)
+#### 1. Frontend ([[nextjs]])
 - Servicio desplegado desde el directorio `venta-entradas-v2-frontend`
 - Utiliza el Dockerfile existente o buildpack de Node.js
 - Puerto expuesto: 3000 (mapeado a dominio público)
 - Variables de entorno: `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_SENTRY_DSN`, etc.
 
-#### 2. Backend (NestJS)
+#### 2. Backend ([[nestjs]])
 - Servicio desplegado desde el directorio `venta-entradas-v2-backend`
 - Utiliza el Dockerfile existente o buildpack de Node.js
 - Puerto expuesto: 3001 (mapeado a dominio público o interno)
 - Variables de entorno: `DATABASE_URL`, `JWT_SECRET`, `CLOUDFLARE_R2_*`, etc.
 
-#### 3. Base de Datos (MongoDB)
+#### 3. Base de Datos ([[base-de-datos-mongodb|MongoDB]])
 - Addon de MongoDB gestionado por Railway
 - Conexión interna mediante variable de entorno `DATABASE_URL`
 - No requiere configuración adicional de red o seguridad
@@ -155,41 +155,41 @@ graph TD
 
 ## Beneficios para el Proyecto
 
-> [!success] Simplicidad de Despliegue
-> - **Despliegue con un clic**: Conexión a repositorio y despliegue automático
-> - **Sin gestión de servidores**: Railway maneja la infraestructura subyacente
-> - **Rollbacks fáciles**: Volver a despliegues anteriores con un clic
-> - **Entornos aislados**: Despliegues separados para desarrollo, staging y producción
+### [!success] Simplicidad de Despliegue
+-   **Despliegue con un clic**: Conexión a repositorio y despliegue automático
+-   **Sin gestión de servidores**: Railway maneja la infraestructura subyacente
+-   **Rollbacks fáciles**: Volver a despliegues anteriores con un clic
+-   **Entornos aislados**: Despliegues separados para desarrollo, staging y producción
 
-> [!success] Gestión de Base de Datos
-> - **Base de datos gestionada**: Copias de seguridad automáticas, actualizaciones, parches
-> - **Escalado sencillo**: Aumentar recursos de la base de datos según necesidad
-> - **Conexión segura**: Acceso interno entre servicios sin exposición pública
-> - **Variables de entorno automáticas**: `DATABASE_URL` proporcionada por el addon
+### [!success] Gestión de Base de Datos
+-   **Base de datos gestionada**: Copias de seguridad automáticas, actualizaciones, parches
+-   **Escalado sencillo**: Aumentar recursos de la base de datos según necesidad
+-   **Conexión segura**: Acceso interno entre servicios sin exposición pública
+-   **Variables de entorno automáticas**: `DATABASE_URL` proporcionada por el addon
 
-> [!success] Flujo de Trabajo de Desarrollo
-> - **Entornos de vista previa**: Despliegues automáticos para cada pull request
-> - **Revisión de cambios**: Probar funcionalidad en entorno idéntico a producción
-> - **Integración continua**: Despliegue automático al mergear en rama principal
-> - **Logs centralizados**: Ver logs de todos los servicios en un solo lugar
+### [!success] Flujo de Trabajo de Desarrollo
+-   **Entornos de vista previa**: Despliegues automáticos para cada pull request
+-   **Revisión de cambios**: Probar funcionalidad en entorno idéntico a producción
+-   **Integración continua**: Despliegue automático al mergear en rama principal
+-   **Logs centralizados**: Ver logs de todos los servicios en un solo lugar
 
-> [!success] Escalabilidad y Rendimiento
-> - **Escalado horizontal**: Aumentar instancias de servicio según carga
-> - **Escalado vertical**: Aumentar CPU/RAM de instancias individuales
-> - **Distribución global**: Opciones de despliegue en múltiples regiones
-> - **Optimización de recursos**: Pagar solo por lo que se utiliza
+### [!success] Escalabilidad y Rendimiento
+-   **Escalado horizontal**: Aumentar instancias de servicio según carga
+-   **Escalado vertical**: Aumentar CPU/RAM de instancias individuales
+-   **Distribución global**: Opciones de despliegue en múltiples regiones
+-   **Optimización de recursos**: Pagar solo por lo que se utiliza
 
 ## Integración con Otros Servicios
 
 Este método de despliegue se relaciona con varios aspectos de nuestra arquitectura:
 
-- [[Docker]] - Base para los servicios desplegados en Railway
-- [[Variables-de-entorno]] - Gestión segura de configuración en diferentes entornos
-- [[Integración-con-backend]] - Cómo el frontend se comunica con el backend desplegado
-- [[Base-de-datos-MongoDB]] - Uso del addon gestionado de MongoDB
-- [[Cloudflare-R2]] - Configuración de credenciales para almacenamiento de objetos
-- [[Sentry]] - Monitoreo de errores en entornos de producción
-- [[CI-CD]] - Flujo de integración y despliegue continuo
+- [[docker]] - Base para los servicios desplegados en Railway
+- [[variables-de-entorno]] - Gestión segura de configuración en diferentes entornos
+- [[integracion-con-backend]] - Cómo el frontend se comunica con el backend desplegado
+- [[base-de-datos-mongodb]] - Uso del addon gestionado de MongoDB
+- [[cloudflare-r2]] - Configuración de credenciales para almacenamiento de objetos
+- [[sentry]] - Monitoreo de errores en entornos de producción
+- [[ci-cd]] - Flujo de integración y despliegue continuo
 
 ## Mejores Prácticas de Implementación
 
@@ -260,3 +260,6 @@ Este método de despliegue se relaciona con varios aspectos de nuestra arquitect
 - **Rollback**: Revertir a un estado anterior de despliegue
 - **Scaling horizontal**: Aumentar el número de instancias de un servicio
 - **Scaling vertical**: Aumentar los recursos (CPU/RAM) de una instancia individual
+
+> [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
+> *Última actualización: 2026-04-27*

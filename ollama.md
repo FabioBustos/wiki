@@ -62,10 +62,10 @@ Aunque nuestro sistema de ticketera es una aplicación transaccional, Ollama pod
 
 ## Integración con Otros Servicios (Potencial)
 
--   **[[OpenCode]]**: Los agentes de OpenCode podrían invocar modelos de Ollama a través de la ejecución de comandos `bash` o una integración MCP personalizada.
--   **[[NestJS]] Backend**: El backend podría interactuar con la API de Ollama para tareas de procesamiento de texto internas.
--   **[[Next.js]] Frontend**: Podría haber una interfaz de usuario para interactuar con un servicio de backend que a su vez usa Ollama.
--   **[[NotebookLM]]**: Ollama podría complementar a NotebookLM para tareas de procesamiento de texto que requieran un control local estricto o personalización.
+-   **[[opencode]]**: Los agentes de OpenCode podrían invocar modelos de Ollama a través de la ejecución de comandos `bash` o una integración MCP personalizada.
+-   **[[nestjs]] Backend**: El backend podría interactuar con la API de Ollama para tareas de procesamiento de texto internas.
+-   **[[nextjs]] Frontend**: Podría haber una interfaz de usuario para interactuar con un servicio de backend que a su vez usa Ollama.
+-   **[[notebooklm]]**: Ollama podría complementar a NotebookLM para tareas de procesamiento de texto que requieran un control local estricto o personalización.
 
 ## Mejores Prácticas de Implementación (Consideraciones)
 
@@ -95,11 +95,11 @@ Aunque nuestro sistema de ticketera es una aplicación transaccional, Ollama pod
 
 ## Relación con Otros Conceptos del Sistema
 
-- [[IA en el Desarrollo]] - Ollama es una herramienta clave para integrar IA localmente.
-- [[Privacidad de Datos]] - Beneficio directo de la ejecución local.
-- [[Costo de Infraestructura]] - Potencial de reducción de costos al evitar APIs de nube.
-- [[OpenCode]] - Posible integración para potenciar agentes.
-- [[NotebookLM]] - Herramienta complementaria para procesamiento de información.
+- [[ia-en-el-desarrollo]] - Ollama es una herramienta clave para integrar IA localmente.
+- [[seguridad-de-datos]] - Beneficio directo de la ejecución local.
+- [[costo-de-infraestructura]] - Potencial de reducción de costos al evitar APIs de nube.
+- [[opencode]] - Posible integración para potenciar agentes.
+- [[notebooklm]] - Herramienta complementaria para procesamiento de información.
 
 > [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
 > *Última actualización: 2026-04-27*

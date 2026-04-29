@@ -56,7 +56,7 @@ tags:
 
 > [!info] Características principales
 > - **Monitoreo de errores**: Captura y agrupación automática de excepciones y errores
-> - **Monitoreo de rendimiento**: Rastreo de transacciones y métricas de rendimiento ([[APM]])
+> - **Monitoreo de rendimiento**: Rastreo de transacciones y métricas de rendimiento ([[apm]])
 > - **Soporte multiplataforma**: Integración con JavaScript/TypeScript, Python, Node.js, Java, .NET, y más
 > - **Contexto rico**: Información detallada sobre el estado de la aplicación cuando ocurre un error
 > - **Alertas inteligentes**: Notificaciones basadas en umbrales, tendencias y regresiones
@@ -66,7 +66,7 @@ tags:
 
 ## Uso en el Sistema de Ticketera
 
-En nuestro sistema de gestión de tickets, Sentry se utiliza para monitorear tanto el frontend ([[Next.js]]) como el backend ([[NestJS]]), proporcionando visibilidad completa sobre la salud de la aplicación en todos los entornos.
+En nuestro sistema de gestión de tickets, Sentry se utiliza para monitorear tanto el frontend ([[nextjs]]) como el backend ([[nestjs]]), proporcionando visibilidad completa sobre la salud de la aplicación en todos los entornos.
 
 ### Arquitectura de Monitoreo
 
@@ -84,7 +84,7 @@ graph TD
     I[Cloudflare R2] -->|Errores de almacenamiento| D
 ```
 
-### Integración en el Frontend (Next.js)
+### Integración en el Frontend ([[nextjs]])
 
 #### Configuración básica
 
@@ -175,7 +175,7 @@ function loadUserProfile(userId: string) {
 }
 ```
 
-### Integración en el Backend (NestJS)
+### Integración en el Backend ([[nestjs]])
 
 #### Configuración del módulo
 
@@ -306,7 +306,7 @@ async function bootstrap() {
 bootstrap();
 ```
 
-### Monitoreo de Rendimiento (APM)
+### Monitoreo de Rendimiento ([[apm]])
 
 #### Backend - Rastreo de transacciones
 
@@ -437,11 +437,11 @@ export function EventCard({ event }: EventCardProps) {
 
 ### [!success] Detección Temprana de Problemas
 - **Alertas en tiempo real**: Notificación inmediata cuando aumentan las tasas de error
-- **Detección de regresiones**: Comparación automática entre versiones para identificar problemas introducidos
+- **Detección de [[regresion|regresiones]]**: Comparación automática entre versiones para identificar problemas introducidos
 - **Visibilidad en producción**: Ver exactamente qué están experimentando los usuarios reales
 - **Reducción del MTTR**: Tiempo medio para resolver problemas disminuye significativamente
 
-### [!success] Mejora de la Experiencia de Usuario
+### [!success] Mejora de la [[experiencia-de-usuario|Experiencia de Usuario]]
 - **Identificación de puntos de fricción**: Ver dónde los usuarios abandonan o encuentran errores
 - **Optimización de flujo**: Mejorar los caminos críticos basándose en datos reales de uso
 - **Reducción de errores frontend**: Detectar y corregir problemas específicos de navegadores o dispositivos
@@ -454,7 +454,7 @@ export function EventCard({ event }: EventCardProps) {
 - **Ciclos de retroalimentación más rápidos**: Desde detección hasta resolución en horas, no días
 
 ### [!success] Toma de Decisiones Basada en Datos
-- **Métricas de calidad**: Tasa de errores, tiempo de carga, porcentaje de sesiones sin errores
+- **Métricas de calidad**: Tasa de errores, tiempo de carga, porcentaje de [[session|sesiones]] sin errores
 - **Análisis de tendencias**: Ver cómo evoluciona la estabilidad y el rendimiento con el tiempo
 - **Impacto de cambios**: Medir el efecto de despliegues, nuevas funcionalidades o cambios de configuración
 - **Justificación de inversiones**: Demostrar el ROI de mejoras técnicas mediante métricas concretas
@@ -463,32 +463,32 @@ export function EventCard({ event }: EventCardProps) {
 
 Este método de monitoreo se relaciona con varios aspectos de nuestra arquitectura:
 
-- [[Railway]] - Despliegue en entornos donde Sentry proporciona visibilidad
-- [[Variables-de-entorno]] - Gestión segura de DSNs y configuraciones de release (ver [[Crear-variables-de-entorno|guía de creación]])
-- [[Integración-con-backend]] - Cómo el backend reporta errores a Sentry
-- [[Integración-con-frontend]] - Cómo el frontend captura y reporta errores
-- [[Manejo-de-Errores]] - Estrategias generales para captura y reporte de excepciones
-- [[Logs-y-Monitoreo]] - Parte de la estrategia general de observabilidad
-- [[Calidad-de-Código]] - Herramienta para medir y mejorar la confiabilidad
-- [[Experiencia-de-Usuario]] - Vinculación directa entre calidad técnica y UX
-- [[Base-de-datos-MongoDB]] - Monitoreo de consultas lentas y errores de conexión
-- [[Cloudflare-R2]] - Detección de errores en almacenamiento de objetos
+- [[railway]] - Despliegue en entornos donde Sentry proporciona visibilidad
+- [[variables-de-entorno]] - Gestión segura de [[dsn|DSNs]] y configuraciones de [[release]] (ver [[Crear-variables-de-entorno|guía de creación]])
+- [[integracion-con-backend]] - Cómo el backend reporta errores a Sentry
+- [[integracion-con-frontend]] - Cómo el frontend captura y reporta errores
+- [[manejo-de-errores]] - Estrategias generales para captura y reporte de excepciones
+- [[logs-y-monitoreo]] - Parte de la estrategia general de [[observabilidad]]
+- [[calidad-de-codigo]] - Herramienta para medir y mejorar la confiabilidad
+- [[experiencia-de-usuario]] - Vinculación directa entre calidad técnica y UX
+- [[base-de-datos-mongodb]] - Monitoreo de consultas lentas y errores de conexión
+- [[cloudflare-r2]] - Detección de errores en almacenamiento de objetos
 
 ## Mejores Prácticas de Implementación
 
-### [!tip] Configuración de DSNs y Seguridad
-- Use DSNs diferentes para cada entorno (desarrollo, staging, producción)
-- Nunca exponga el DSN del backend en el frontend; use variables de entorno separadas
-- Rotar DSNs periódicamente como medida de seguridad adicional
-- Considere usar el mismo proyecto de Sentry pero con entornos diferentes para facilitar la comparación
+### [!tip] Configuración de [[dsn|DSNs]] y Seguridad
+- Use [[dsn|DSNs]] diferentes para cada [[environment|entorno]] (desarrollo, staging, producción)
+- Nunca exponga el [[dsn|DSN]] del backend en el frontend; use [[variables-de-entorno|variables de entorno]] separadas
+- Rotar [[dsn|DSNs]] periódicamente como medida de seguridad adicional
+- Considere usar el mismo proyecto de Sentry pero con [[environment|entornos]] diferentes para facilitar la comparación
 
 ### [!tip] Tasas de Muestreo Adecuadas
-- **Errores**: 100% de muestreo en todos los entornos (queremos capturar todos los errores)
+- **Errores**: 100% de muestreo en todos los [[environment|entornos]] (queremos capturar todos los errores)
 - **Rendimiento (traces)**:
   - Desarrollo: 100% (para depuración completa)
   - Staging: 50-100% (dependiendo del volumen)
   - Producción: 5-20% (ajustar según volumen y necesidades de rendimiento)
-- **Sesiones**: Considerar sesionesSampleRate para rastreo de sesiones de usuario
+- **[[session|Sesiones]]**: Considerar sessionsSampleRate para rastreo de [[session|sesiones]] de usuario
 
 ### [!tip] Enriquecimiento de Contexto
 - Siempre añadir contexto relevante antes de operaciones críticas:
@@ -514,12 +514,12 @@ Este método de monitoreo se relaciona con varios aspectos de nuestra arquitectu
   - Eliminar información sensible (passwords, tokens, datos personales)
   - Añadir información de negocio relevante (ID de evento, tipo de transacción)
   - Filtrar ruido conocido (errores de extensiones de navegador, pings de salud)
-  - Enriquecer con datos de sesiones o usuarios cuando sea apropiado
+  - Enriquecer con datos de [[session|sesiones]] o usuarios cuando sea apropiado
 
 ### [!tip] Alertas y Notificaciones
 - Configure alertas basadas en:
-  - Tasa de error por encima de umbrales (ej: >1% de sesiones con errores)
-  - Regresiones en versiones nuevas (comparar con versión estable)
+  - Tasa de error por encima de umbrales (ej: >1% de [[session|sesiones]] con errores)
+  - [[regresion|Regresiones]] en versiones nuevas (comparar con versión estable)
   - Aumentos repentinos en errores específicos
   - Tiempo de respuesta por encima de SLA (ej: >2s para API crítica)
 - Use diferentes canales según severidad:
@@ -529,14 +529,14 @@ Este método de monitoreo se relaciona con varios aspectos de nuestra arquitectu
   - Bajo: Solo tablero de monitoreo
 
 ### [!tip] Gestión de Lanzamientos y Versiones
-- Vincule cada despliegue a un release en Sentry:
+- Vincule cada despliegue a un [[release]] en Sentry:
   ```bash
   # En el pipeline de CI/CD
   sentry-cli releases set-commits --auto $VERSION
   sentry-cli releases deploys $VERSION new -e $ENVIRONMENT
   ```
-- Use tags de release para filtrar problemas por versión
-- Habilite la detección automática de regresiones para identificar problemas introducidos en nuevos despliegues
+- Use tags de [[release]] para filtrar problemas por versión
+- Habilite la detección automática de [[regresion|regresiones]] para identificar problemas introducidos en nuevos despliegues
 
 ### [!tip] Integración con Flujo de Trabajo
 - Conecte Sentry con:
@@ -585,20 +585,22 @@ Este método de monitoreo se relaciona con varios aspectos de nuestra arquitectu
 
 ## Glosario de Términos
 
-- **[[DSN]] (Data Source Name)**: URL de configuración que le dice al SDK de Sentry a dónde enviar los eventos
-- **[[Evento]]**: Una ocurrencia específica de un error o transacción de rendimiento que se envía a Sentry
-- **[[Transacción]]**: Una medición de rendimiento que representa una unidad de trabajo (como una solicitud HTTP)
-- **[[Span]]**: Una operación dentro de una transacción con tiempo de inicio y duración
-- **[[Breadcrumb]]**: Un registro de lo que sucedió antes de un error (como clicks, cambios de ruta, etc.)
+- **[[dsn]] (Data Source Name)**: URL de configuración que le dice al SDK de Sentry a dónde enviar los eventos
+- **[[evento]]**: Una ocurrencia específica de un error o transacción de rendimiento que se envía a Sentry
+- **[[transaccion]]**: Una medición de rendimiento que representa una unidad de trabajo (como una solicitud HTTP)
+- **[[span]]**: Una operación dentro de una transacción con tiempo de inicio y duración
+- **[[breadcrumb]]**: Un registro de lo que sucedió antes de un error (como clicks, cambios de ruta, etc.)
 - **Nivel de error**: La gravedad de un evento (fatal, error, warning, info, debug)
-- **[[Release]]**: Una versión específica de su aplicación vinculada a eventos en Sentry
-- **[[Environment]]**: El entorno de despliegue donde ocurrió el evento (desarrollo, staging, producción)
+- **[[release]]**: Una versión específica de su aplicación vinculada a eventos en Sentry
+- **[[environment]]**: El entorno de despliegue donde ocurrió el evento (desarrollo, staging, producción)
 - **Usuario afectado**: Información sobre el usuario que experimentó el error (cuando está disponible y permitido)
 - **Huella digital (Fingerprint)**: Cómo Sentry agrupa eventos similares para reducir el ruido
 - **Umbral de alerta**: Un valor que, cuando se supera, dispara una notificación
-- **[[Regresión]]**: Un aumento significativo en errores o degradación de rendimiento en una nueva versión
+- **[[regresion]]**: Un aumento significativo en errores o degradación de rendimiento en una nueva versión
 - **Evento sin usuario**: Un error que no puede asociarse a un usuario específico (común en errores de backend)
-- **[[Session]]**: En el contexto de Sentry, representa una interacción de usuario con su aplicación
+- **[[session]]**: En el contexto de Sentry, representa una interacción de usuario con su aplicación
 - **Release health**: Métrica que muestra el porcentaje de sesiones sin errores para una versión específica
 - **Crash-free users**: Porcentaje de usuarios que no experimentaron ningún error fatal durante su sesión
 - **Apdex score**: Métrica estandarizada de satisfacción del usuario basada en tiempos de respuesta
+
+(End of file - total 604 lines)

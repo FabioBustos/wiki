@@ -47,7 +47,7 @@ sequenceDiagram
     -   Decodificar el código para extraer el `ticketId` único.
 
 2.  **Existencia en Base de Datos**:
-    -   Consultar la [[base-de-datos-mongodb|base de datos]] para confirmar que el `ticketId` existe.
+    -   Consultar la [[base-de-datos-mongodb]] para confirmar que el `ticketId` existe.
 
 3.  **Estado del Ticket**:
     -   **Activo**: El ticket debe estar en estado "activo".
@@ -73,9 +73,9 @@ sequenceDiagram
 
 ## Implementación Técnica
 
--   **Backend ([[nestjs]])**: Contiene la lógica principal de validación, interactuando con la [[base-de-datos-mongodb|base de datos]].
+-   **Backend ([[nestjs]])**: Contiene la lógica principal de validación, interactuando con la [[base-de-datos-mongodb]] para la base de datos.
 -   **Dispositivo de Escaneo**: Puede ser una aplicación móvil o un hardware dedicado que se comunica con el backend.
--   **[[seguridad-de-datos|Seguridad de Datos]]**: Asegurar que la comunicación entre el scanner y el backend sea segura (HTTPS).
+-   **[[seguridad-de-datos]]**: Asegurar que la comunicación entre el scanner y el backend sea segura (HTTPS).
 
 ## Relación con Otros Conceptos
 

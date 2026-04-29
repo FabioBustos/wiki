@@ -26,17 +26,17 @@ La **Seguridad de Datos** abarca las medidas técnicas, organizativas y legales 
 
 -   **HTTPS/TLS**: Toda la comunicación entre el frontend, backend y servicios externos debe usar cifrado TLS.
 -   **WebSockets Seguros (WSS)**: Para comunicaciones en tiempo real.
--   **VPNs/Redes Privadas**: Para comunicación segura entre servicios internos (ej. [[Railway]], [[Seenode]]).
+-   **VPNs/Redes Privadas**: Para comunicación segura entre servicios internos (ej. en [[railway]] o [[seenode]]).
 
 ### 2. Seguridad en Reposo
 
--   **Cifrado de Base de Datos**: Cifrar datos sensibles almacenados en la base de datos (ej. contraseñas, datos personales).
--   **Cifrado de Almacenamiento**: Utilizar cifrado en reposo para datos almacenados en [[Cloudflare R2]] u otros servicios.
+-   **Cifrado de Base de Datos**: Cifrar datos sensibles almacenados en la [[base-de-datos]] (ej. contraseñas, datos personales).
+-   **Cifrado de Almacenamiento**: Utilizar cifrado en reposo para datos almacenados en [[cloudflare-r2]] u otros servicios.
 -   **Gestión de Secrets**: Almacenar credenciales, claves API y otros secretos de forma segura (ej. variables de entorno cifradas, gestores de secretos).
 
 ### 3. Autenticación y Autorización
 
--   **Autenticación Fuerte**: Implementar mecanismos robustos para verificar la identidad de los usuarios (ej. JWT, OAuth).
+-   **Autenticación Fuerte**: Implementar mecanismos robustos para verificar la identidad de los usuarios (ej. [[jwt]], OAuth).
 -   **Autorización Basada en Roles (RBAC)**: Definir roles con permisos específicos para controlar el acceso a recursos y funcionalidades.
 -   **Autenticación de Múltiples Factores (MFA)**: Requerir MFA para accesos administrativos o a datos sensibles.
 
@@ -45,23 +45,27 @@ La **Seguridad de Datos** abarca las medidas técnicas, organizativas y legales 
 -   **Inyección (SQL, XSS)**: Validar y sanitizar todas las entradas del usuario. Usar ORMs y frameworks que mitiguen estas amenazas.
 -   **Ataques de Fuerza Bruta**: Implementar límites de intentos de login y CAPTCHAs.
 -   **Denegación de Servicio (DoS/DDoS)**: Utilizar firewalls, WAFs (Web Application Firewalls) y estrategias de limitación de tasa.
--   **Exposición de Datos Sensibles**: Filtrar información sensible en logs y [[Sentry]] (ver `beforeSend` y `scrubbing`).
+-   **Exposición de Datos Sensibles**: Filtrar información sensible en logs y [[sentry]] (ver `beforeSend` y `scrubbing`).
 
 ## Cumplimiento Normativo
 
--   **GDPR/CCPA**: Cumplir con las regulaciones de privacidad de datos aplicables (ej. derecho al olvido, portabilidad de datos).
--   **Regulaciones Específicas de la Industria**: Cumplir con normativas relevantes para la venta de entradas o eventos.
+-   **PCI DSS**: Para el procesamiento de pagos con tarjeta.
+-   **GDPR/CCPA**: Para la protección de datos personales.
+-   **Leyes Locales**: Cumplir con las regulaciones de protección de datos específicas de cada región.
 
 ## Relación con Otros Conceptos
 
-- [[JWT]]
-- [[Variables-de-entorno]]
-- [[Cloudflare R2]]
-- [[Sentry]]
-- [[URL Firmada]]
-- [[Políticas de Ciclo de Vida]]
-- [[Cumplimiento-normativo]] (concepto general)
-- [[OWASP Top 10]] (lista de vulnerabilidades comunes)
+- [[seguridad-de-datos]] - Concepto general que engloba estas medidas.
+- [[gestion-de-credenciales]] - Prácticas para proteger credenciales.
+- [[variables-de-entorno]] - Almacenamiento seguro de configuración.
+- [[url-firmada]] - Acceso seguro a recursos.
+- [[sentry]] - Monitoreo de seguridad.
+- [[nestjs]] / [[nextjs]] - Frameworks donde se implementan estas medidas.
+- [[cloudflare-r2]] - Almacenamiento seguro de objetos.
+- [[docker]] - Contenerización segura.
+- [[railway]] / [[seenode]] - Plataformas de despliegue con características de seguridad.
+- [[integracion-de-sistemas-pago]] - Seguridad en transacciones financieras.
+- [[procesos-de-validacion]] - Seguridad en la validación de tickets.
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*

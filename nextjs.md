@@ -10,7 +10,7 @@ obsidian_ui: true
 
 ## Definición
 
-**Next.js** es un framework de React de código abierto que permite construir aplicaciones web full-stack con renderizado del lado del servidor (SSR), generación de sitios estáticos (SSG) y renderizado de componentes del servidor (RSC). Es conocido por su enfoque en el rendimiento, la experiencia del desarrollador y la optimización para la producción.
+**Next.js** es un framework de [[react]] de código abierto que permite construir aplicaciones web full-stack con renderizado del lado del servidor (SSR), generación de sitios estáticos (SSG) y renderizado de componentes del servidor (RSC). Es conocido por su enfoque en el rendimiento, la experiencia del desarrollador y la optimización para la producción.
 
 > [!info] Conceptos Clave
 > -   **Renderizado del Lado del Servidor (SSR)**: Las páginas se renderizan en el servidor en cada solicitud, lo que mejora el SEO y el tiempo de carga inicial.
@@ -78,13 +78,13 @@ venta-entradas-v2-frontend/
 
 ## Integración con Otros Servicios
 
--   **[[NestJS]]**: Nuestro backend principal, con el que Next.js se comunica a través de [[Integración-con-backend|API RESTful]].
--   **[[Tailwind CSS]]**: Framework de CSS de utilidad para estilizar los componentes de Next.js.
--   **[[Storybook]]**: Para el desarrollo aislado y la documentación de los componentes de UI de Next.js.
--   **[[Sentry]]**: Para monitoreo de errores y rendimiento en el frontend.
--   **[[Cloudflare R2]]**: Para servir activos estáticos y optimizados, a menudo referenciados desde Next.js.
--   **[[Docker]]**: Para contenerizar la aplicación Next.js en desarrollo y producción.
--   **[[Railway]] / [[Seenode]]**: Plataformas de despliegue para la aplicación Next.js.
+-   **[[nestjs]]**: Nuestro backend principal, con el que Next.js se comunica a través de [[integracion-con-backend|API RESTful]].
+-   **[[tailwind]]**: Framework de CSS de utilidad para estilizar los componentes de Next.js.
+-   **[[storybook]]**: Para el desarrollo aislado y la documentación de los componentes de UI de Next.js.
+-   **[[sentry]]**: Para monitoreo de errores y rendimiento en el frontend.
+-   **[[cloudflare-r2]]**: Para servir activos estáticos y optimizados, a menudo referenciados desde Next.js.
+-   **[[docker]]**: Para contenerizar la aplicación Next.js en desarrollo y producción.
+-   **[[railway]] / [[seenode]]**: Plataformas de despliegue para la aplicación Next.js.
 
 ## Mejores Prácticas de Implementación
 
@@ -103,7 +103,7 @@ venta-entradas-v2-frontend/
 
 ### [!tip] Manejo de Errores
 -   Implementar `error.tsx` para manejar errores a nivel de ruta.
--   Capturar errores en el cliente y servidor con [[Sentry]].
+-   Capturar errores en el cliente y servidor con [[sentry]].
 
 ## Solución de Problemas Comunes
 
@@ -135,16 +135,16 @@ venta-entradas-v2-frontend/
 
 ## Relación con Otros Conceptos del Sistema
 
-- [[React]] - La librería base sobre la que se construye Next.js.
-- [[NestJS]] - Backend principal del proyecto.
-- [[Tailwind CSS]] - Framework de estilos utilizado.
-- [[Storybook]] - Para desarrollo y documentación de componentes.
-- [[Sentry]] - Monitoreo de errores y rendimiento.
-- [[Docker]] - Contenerización de la aplicación.
-- [[Railway]] / [[Seenode]] - Plataformas de despliegue.
-- [[Integración-con-backend]] - Patrones de comunicación con el backend.
-- [[Optimización de Imágenes]] - Uso de `next/image`.
-- [[UI/UX Design]] - Implementación de la interfaz de usuario.
+- [[react]] - La librería base sobre la que se construye Next.js.
+- [[nestjs]] - Backend principal del proyecto.
+- [[tailwind]] - Framework de estilos utilizado.
+- [[storybook]] - Para desarrollo y documentación de componentes.
+- [[sentry]] - Monitoreo de errores y rendimiento.
+- [[docker]] - Contenerización de la aplicación.
+- [[railway]] / [[seenode]] - Plataformas de despliegue.
+- [[integracion-con-backend]] - Patrones de comunicación con el backend.
+- [[optimizacion-de-imagenes]] - Uso de `next/image`.
+- [[ui-ux-design]] - Implementación de la interfaz de usuario.
 
 > [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
 > *Última actualización: 2026-04-27*

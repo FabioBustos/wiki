@@ -15,7 +15,7 @@ Las imágenes suelen ser uno de los mayores contribuyentes al tamaño de página
 -   **Mejorar el Rendimiento Web**: Reducir el tiempo de carga de la página.
 -   **Reducir el Uso de Datos**: Ahorrar ancho de banda para los usuarios (especialmente en móviles).
 -   **Mejorar el SEO**: Los sitios más rápidos tienden a posicionarse mejor en los motores de búsqueda.
--   **Reducir Costos de Almacenamiento y Transferencia**: Especialmente relevante si no se usa [[Cloudflare R2]] o si se incurre en [[Egress]].
+-   **Reducir Costos de Almacenamiento y Transferencia**: Especialmente relevante si no se usa [[cloudflare-r2]] o si se incurre en [[egress]].
 
 ## Estrategias de Optimización
 
@@ -40,35 +40,35 @@ Las imágenes suelen ser uno de los mayores contribuyentes al tamaño de página
 
 ### 4. Entrega Eficiente
 
--   **CDN (Content Delivery Network)**: Servir imágenes desde una red global de servidores para reducir la latencia. [[Cloudflare R2]] se integra bien con el CDN de Cloudflare.
+-   **CDN (Content Delivery Network)**: Servir imágenes desde una red global de servidores para reducir la latencia. [[cloudflare-r2]] se integra bien con el CDN de Cloudflare.
 -   **Lazy Loading**: Cargar imágenes solo cuando entran en el viewport del usuario.
 -   **Lazy Loading de Imágenes**: Usar el atributo `loading="lazy"` en las etiquetas `<img>`.
 -   **Code Splitting**: Cargar imágenes solo cuando son necesarias en la aplicación.
 
 ### 5. Optimización Específica para Cloudflare
 
--   **Cloudflare Images**: Servicio dedicado para optimización y entrega de imágenes. Permite redimensionar, recortar, cambiar formato (a WebP/AVIF) y aplicar optimizaciones al vuelo.
--   **Cloudflare Workers**: Se pueden usar para implementar lógica de transformación de imágenes personalizada sobre [[Cloudflare R2]].
+-   **[[configuracion-de-cloudflare-images|Cloudflare Images]]**: Servicio dedicado para optimización y entrega de imágenes. Permite redimensionar, recortar, cambiar formato (a WebP/AVIF) y aplicar optimizaciones al vuelo.
+-   **[[cloudflare-workers]]**: Se pueden usar para implementar lógica de transformación de imágenes personalizada sobre [[cloudflare-r2]].
 -   **R2 como Origen**: Usar R2 para almacenar las imágenes originales y Cloudflare Images/Workers para servirlas optimizadas.
 
 ## Implementación en el Proyecto
 
--   **Almacenamiento**: Usar [[Cloudflare R2]] para almacenar las imágenes originales.
+-   **Almacenamiento**: Usar [[cloudflare-r2]] para almacenar las imágenes originales.
 -   **Entrega**:
-    -   Para imágenes de eventos y assets generales: Servir directamente desde R2 con [[URL Firmada]] si son privadas, o mediante el CDN de Cloudflare si son públicas.
-    -   Para optimización avanzada (redimensionamiento, formato WebP/AVIF): Considerar el uso de [[Cloudflare Images]] o [[Cloudflare Workers]] sobre R2.
+    -   Para imágenes de eventos y assets generales: Servir directamente desde R2 con [[url-firmada]] si son privadas, o mediante el CDN de Cloudflare si son públicas.
+    -   Para optimización avanzada (redimensionamiento, formato WebP/AVIF): Considerar el uso de [[configuracion-de-cloudflare-images|Cloudflare Images]] o [[cloudflare-workers]] sobre R2.
 -   **Frontend**: Implementar imágenes responsivas (`srcset`) y lazy loading.
 
 ## Relación con Otros Conceptos
 
-- [[Cloudflare R2]]
-- [[Cloudflare Images]]
-- [[Cloudflare Workers]]
-- [[Frontend (Next.js)]]
-- [[Backend (NestJS)]]
-- [[Rendimiento Web]]
-- [[Egress]]
-- [[Costos-de-infraestructura]]
+- [[cloudflare-r2]]
+- [[configuracion-de-cloudflare-images]]
+- [[cloudflare-workers]]
+- [[nextjs]]
+- [[nestjs]]
+- [[rendimiento]]
+- [[egress]]
+- [[costo-de-infraestructura]]
 
 > [!note] Documento creado como placeholder.
 > *Última actualización: 2026-04-27*

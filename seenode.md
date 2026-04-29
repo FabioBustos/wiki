@@ -34,7 +34,7 @@ tags:
 
 ## Uso en el Sistema de Ticketera
 
-En nuestro proyecto, Seenode se utiliza para desplegar tanto el frontend ([[venta-entradas-v2-frontend|Next.js]]) como el backend ([[venta-entradas-v2-backend|NestJS]]) junto con la base de datos MongoDB (o PostgreSQL/MySQL si optamos por cambiar), aprovechando su capacidad para manejar múltiples servicios interconectados con redes privadas.
+En nuestro proyecto, Seenode se utiliza para desplegar tanto el frontend ([[nextjs]]) como el backend ([[nestjs]]) junto con la base de datos MongoDB (o PostgreSQL/MySQL si optamos por cambiar), aprovechando su capacidad para manejar múltiples servicios interconectados con redes privadas.
 
 ### Arquitectura de Despliegue
 
@@ -56,24 +56,24 @@ graph TD
 
 ### Servicios Desplegados
 
-#### 1. Frontend (Next.js)
+#### 1. Frontend ([[nextjs]])
 - Servicio desplegado desde el directorio `desarrollo/venta-entradas-v2-frontend`
 - Detección automática de runtime (Node.js)
 - Puerto expuesto: 3000 (mapeado a dominio público con SSL)
 - Variables de entorno: `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_SENTRY_DSN`, etc.
 
-#### 2. Backend (NestJS)
+#### 2. Backend ([[nestjs]])
 - Servicio desplegado desde el directorio `desarrollo/venta-entradas-v2-backend`
 - Detección automática de runtime (Node.js)
 - Puerto expuesto: 3001 (mapeado a dominio público o interno)
 - Variables de entorno: `DATABASE_URL`, `JWT_SECRET`, `CLOUDFLARE_R2_*`, etc.
 
 #### 3. Base de Datos
-- **Opción 1**: MongoDB (si mantenemos nuestra elección actual)
+- **Opción 1**: [[base-de-datos-mongodb|MongoDB]] (si mantenemos nuestra elección actual)
   - Addon de MongoDB gestionado por Seenode
-- **Opción 2**: PostgreSQL/MySQL (alternativa)
+- **Opción 2**: [[base-de-datos-postgresql|PostgreSQL/MySQL]] (alternativa)
   - Addon gestionado de PostgreSQL o MySQL
-- Conexión interna mediante variable de entorno `DATABASE_URL`
+- Conexión interna mediante [[variables-de-entorno|variable de entorno]] `DATABASE_URL`
 - No requiere configuración adicional de red o seguridad
 
 ### Configuración en Seenode
@@ -86,18 +86,18 @@ graph TD
    - **Frontend**: Desde `desarrollo/venta-entradas-v2-frontend`
    - **Base de datos**: Addon de MongoDB (o PostgreSQL/MySQL)
 4. Configurar variables de entorno:
-   - Para backend: `DATABASE_URL` (viene del addon de base de datos), `JWT_SECRET`, `CLOUDFLARE_R2_ACCESS_KEY_ID`, etc.
-   - Para frontend: `NEXT_PUBLIC_API_URL` (URL del servicio backend), `NEXT_PUBLIC_SENTRY_DSN`
+   - Para backend: `DATABASE_URL` (viene del addon de base de datos), [[jwt]], [[cloudflare-r2]], etc.
+   - Para frontend: [[integracion-con-backend|NEXT_PUBLIC_API_URL]] (URL del servicio backend), [[sentry|NEXT_PUBLIC_SENTRY_DSN]]
 5. Establecer dependencias: El frontend depende del backend para llamadas API
 6. Configurar dominio personalizado (opcional, SSL incluido)
 7. Ajustar recursos según necesidad (CPU/RAM para cada servicio)
 
 #### Características de Despliegue
 - **Detección automática de runtime**: No se requiere Dockerfile ni configuración de build
-- **Buildpacks inteligentes**: Seenode detecta el lenguaje/framework y crea contenedores optimizados
+- **[[buildpacks|Buildpacks inteligentes]]**: Seenode detecta el lenguaje/framework y crea contenedores optimizados
 - **Despliegue continuo**: Redploy automático al hacer push a la rama configurada
 - **Vistas previas**: Despliegues automáticos para pull requests (disponible en planes superiores)
-- **Variables de entorno seguras**: Almacenamiento cifrado de secrets y configuración
+- **[[variables-de-entorno|Variables de entorno seguras]]**: Almacenamiento cifrado de secrets y configuración
 
 ## Beneficios para el Proyecto
 
@@ -108,7 +108,7 @@ graph TD
 > - **Entornos aislados**: Despliegues separados para desarrollo, staging y producción mediante proyectos
 
 > [!success] Arquitectura Optimizada
-> - **Redes privadas por defecto**: Los servicios se comunican internamente sin exposición pública
+> - **[[redes-privadas|Redes privadas por defecto]]**: Los servicios se comunican internamente sin exposición pública
 > - **Conexiones persistentes**: WebSockets, SSE y pools de base de datos permanecen abiertos
 > - **Escalado flexible**: Añadir instancias (horizontal) o aumentar recursos (vertical) según necesidad
 > - **Distribución global**: Opciones de despliegue en múltiples regiones para reducir latencia
@@ -119,7 +119,7 @@ graph TD
 > - **Prueba gratuita de 7 días**: Evaluación sin compromiso antes de comprometerse
 > - **Optimización de recursos**: Pagar solo por lo que se utiliza, sin sobre-provisionamiento
 
-> [!success] Soporte y Experiencia de Desarrollador
+> [!success] Soporte y [[experiencia-de-desarrollador|Experiencia de Desarrollador]]
 > - **Soporte en tiempo real**: Chat en vivo con ingenieros que construyeron la plataforma
 > - **Depuración colaborativa**: Los desarrolladores de Seenode saltan directamente a ayudar con problemas
 > - **Logs centralizados**: Build output, runtime y request logs en un solo lugar
@@ -129,14 +129,14 @@ graph TD
 
 Este método de despliegue se relaciona con varios aspectos de nuestra arquitectura:
 
-- [[Buildpacks]] - Base para la detección automática de runtime y construcción de contenedores
-- [[Variables-de-entorno]] - Gestión segura de configuración en diferentes entornos
-- [[Integración-con-backend]] - Cómo el frontend se comunica con el backend desplegado
-- [[Base-de-datos]] - Uso del addon gestionado de base de datos (MongoDB/PostgreSQL/MySQL)
-- [[Cloudflare-R2]] - Configuración de credenciales para almacenamiento de objetos
-- [[Sentry]] - Monitoreo de errores en entornos de producción
-- [[CI-CD]] - Flujo de integración y despliegue continuo
-- [[Redes-privadas]] - Comunicación segura entre servicios sin exposición pública
+- [[buildpacks]] - Base para la detección automática de runtime y construcción de contenedores
+- [[variables-de-entorno]] - Gestión segura de configuración en diferentes entornos
+- [[integracion-con-backend]] - Cómo el frontend se comunica con el backend desplegado
+- [[base-de-datos]] - Uso del addon gestionado de base de datos (MongoDB/PostgreSQL/MySQL)
+- [[cloudflare-r2]] - Configuración de credenciales para almacenamiento de objetos
+- [[sentry]] - Monitoreo de errores en entornos de producción
+- [[ci-cd]] - Flujo de integración y despliegue continuo
+- [[redes-privadas]] - Comunicación segura entre servicios sin exposición pública
 
 ## Mejores Prácticas de Implementación
 
@@ -230,19 +230,19 @@ Este método de despliegue se relaciona con varios aspectos de nuestra arquitect
 
 Este método de despliegue se relaciona con varios aspectos de nuestra arquitectura:
 
-- [[Railway]] - Plataforma alternativa de despliegue con modelo de precios diferente
-- [[Docker]] - Tecnología subyacente que Seenode abstracta mediante buildpacks
-- [[Variables-de-entorno]] - Gestión segura de configuración en diferentes entornos
-- [[Integración-con-backend]] - Cómo el frontend se comunica con el backend desplegado
-- [[Base-de-datos-MongoDB]] - Uso del addon gestionado de MongoDB (opción actual)
-- [[Base-de-datos-PostgreSQL]] - Alternativa de base de datos gestionada disponible en Seenode
-- [[Cloudflare-R2]] - Configuración de credenciales para almacenamiento de objetos
-- [[Sentry]] - Monitoreo de errores en entornos de producción
-- [[CI-CD]] - Flujo de integración y despliegue continuo
-- [[Redes-privadas]] - Comunicación segura entre servicios sin exposición pública
-- [[Arquitectura-de-microservicios]] - Patrón arquitectónico que Seenode facilita naturalmente
-- [[Observabilidad]] - Combinación de logs, métricas y tracing para entender el comportamiento del sistema
-- [[Experiencia-de-Desarrollador]] - Enfoque en reducir fricción en el proceso de despliegue y depuración
+- [[railway]] - Plataforma alternativa de despliegue con modelo de precios diferente
+- [[docker]] - Tecnología subyacente que Seenode abstracta mediante buildpacks
+- [[variables-de-entorno]] - Gestión segura de configuración en diferentes entornos
+- [[integracion-con-backend]] - Cómo el frontend se comunica con el backend desplegado
+- [[base-de-datos-mongodb]] - Uso del addon gestionado de MongoDB (opción actual)
+- [[base-de-datos-postgresql]] - Alternativa de base de datos gestionada disponible en Seenode
+- [[cloudflare-r2]] - Configuración de credenciales para almacenamiento de objetos
+- [[sentry]] - Monitoreo de errores en entornos de producción
+- [[ci-cd]] - Flujo de integración y despliegue continuo
+- [[redes-privadas]] - Comunicación segura entre servicios sin exposición pública
+- [[arquitectura-de-microservicios]] - Patrón arquitectónico que Seenode facilita naturalmente
+- [[observabilidad]] - Combinación de logs, métricas y tracing para entender el comportamiento del sistema
+- [[experiencia-de-desarrollador]] - Enfoque en reducir fricción en el proceso de despliegue y depuración
 
 ## Comparación con Alternativas
 
