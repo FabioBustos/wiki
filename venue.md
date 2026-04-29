@@ -10,13 +10,13 @@ tags:
   - mvp
   - sistema-ticketera
 related:
-  - [[Producto MVP]]
-  - [[Entradas y E-Tickets]]
-  - [[Gestión de Eventos]]
-  - [[API REST - Especificación]]
-  - [[COMUNAS_CHILE]]
-  - [[useVenueSelector]]
-  - [[VenueSelector]]
+  - [[producto-mvp]]
+  - [[entradas-e-ticket]]
+  - [[eventos]]
+  - [[api-rest-especificacion]]
+  - [[comunas-chile]]
+  - [[usevenueselector]]
+  - [[venueselector]]
 ---
 ---
 
@@ -50,7 +50,7 @@ interface Venue {
 | `ciudad` | `string` | Sí | `COMUNAS_CHILE` | derivable desde region |
 
 > [!tip] Nota de Implementación
-> - `region` + `ciudad` son obligatorios pero derivables entre sí mediante los datos estáticos de `COMUNAS_CHILE`
+> - `region` + `ciudad` son obligatorios pero derivables entre sí mediante los datos estáticos de [[comunas-chile]]
 > - `direccion` es libre (ingreso manual del usuario)
 > - `nombre` es libre (ingreso manual del usuario)
 
@@ -81,7 +81,7 @@ flowchart TD
 ```
 
 > [!IMPORTANT] Regla Fundamental
-> **Ciudad → Región es automático** (derivado de `COMUNAS_CHILE`)
+> **Ciudad → Región es automático** (derivado de [[comunas-chile]])
 > No existe "Flujo Ciudad sin Región" porque siempre se conoce la región de cualquier ciudad en Chile.
 
 ## Lógica de Cascada Bidireccional
@@ -114,7 +114,7 @@ flowchart TD
 
 ## Componentes Principales
 
-### Hook: useVenueSelector
+### Hook: [[usevenueselector]]
 
 Hook personalizado que maneja la lógica bidireccional de selección de ubicación.
 
@@ -125,7 +125,7 @@ Hook personalizado que maneja la lógica bidireccional de selección de ubicaci�
 - Notificación de cambios vía callbacks
 - Persistencia de estado
 
-### Componente: VenueSelector
+### Componente: [[venueselector]]
 
 Componente UI que implementa la selección de ubicación con:
 - Dropdowns para Región y Ciudad
@@ -306,13 +306,13 @@ function detectarInconsistencia(
 
 ### Frontend
 
-- `useVenueSelector` - Hook de lógica bidireccional
-- `VenueSelector` - Componente UI principal
+- [[usevenueselector]] - Hook de lógica bidireccional
+- [[venueselector]] - Componente UI principal
 - `RegionSelector` / `CiudadSelector` - Dropdowns de selección
 - `VenueCard` - Componente para mostrar venue seleccionado
 - `InconsistenciaWarning` - Componente de warning
 - `useVenueService` - Hook para consumo de API
-- `COMUNAS_CHILE` - Datos estáticos de ubicaciones
+- [[comunas-chile]] - Datos estáticos de ubicaciones
 
 ### Backend
 
@@ -380,19 +380,19 @@ const filteredVenues = useMemo(() => {
 ## Relación con Otros Conceptos
 
 Este módulo de Venue está estrechamente relacionado con:
-- [[Entradas y E-Tickets]] - Los venues son donde se utilizan las entradas
-- [[Gestión de Eventos]] - Los eventos se asocian a específicos venues
-- [[Taxonomía-de-eventos]] - Clasificación de tipos de eventos por venue
-- [[Producto MVP]] - Parte del producto mínimo viable
-- [[API REST - Especificación]] - Detalles de los endpoints implementados
-- [[COMUNAS_CHILE]] - Datos estáticos de regiones y ciudades de Chile
+- [[entradas-e-ticket]] - Los venues son donde se utilizan las entradas
+- [[eventos]] - Los eventos se asocian a específicos venues
+- [[taxonomia-de-eventos]] - Clasificación de tipos de eventos por venue
+- [[producto-mvp]] - Parte del producto mínimo viable
+- [[api-rest-especificacion]] - Detalles de los endpoints implementados
+- [[comunas-chile]] - Datos estáticos de regiones y ciudades de Chile
 
 ## Mejores Prácticas
 
 ### Para Desarrolladores
 
 > [!tip] Siempre validar la consistencia entre venue y región/ciudad antes de guardar
-> [!tip] Usar el hook `useVenueSelector` en lugar de manejar el estado manualmente
+> [!tip] Usar el hook [[usevenueselector]] en lugar de manejar el estado manualmente
 > [!tip] Implementar debounce en búsquedas de venue para mejorar rendimiento
 > [!tip] Aprovechar los índices de MongoDB en region y ciudad para consultas eficientes
 
@@ -408,8 +408,8 @@ Este módulo de Venue está estrechamente relacionado con:
 - **Venue**: Recinto o espacio físico donde se realizan eventos
 - **Inconsistencia**: Estado cuando la ubicación seleccionada (region/ciudad) no coincide con la del venue
 - **Derivación automática**: Proceso donde seleccionar un venue actualiza automáticamente region y ciudad
-- **COMUNAS_CHILE**: Conjunto de datos estáticos que relacionan regiones y ciudades de Chile
-- **Hook useVenueSelector**: Hook personalizado que encapsula toda la lógica de selección de ubicación
+- [[comunas-chile]]**: Conjunto de datos estáticos que relacionan regiones y ciudades de Chile
+- **Hook [[usevenueselector]]**: Hook personalizado que encapsula toda la lógica de selección de ubicación
 - **Display unificado**: Función que genera una representación de texto consistente para la ubicación
 - **Cascada bidireccional**: Mecanismo que mantiene consistencia entre region, ciudad y venue en ambas direcciones
 

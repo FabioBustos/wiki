@@ -41,9 +41,9 @@ Google enfatiza la responsabilidad en la generación de imágenes con IA. Nano B
 
 Aunque "Nano Banana" es una herramienta externa a nuestro sistema de ticketera, su documentación en la wiki es relevante para:
 
--   [[NotebookLM]]: Otra herramienta de Google basada en IA para investigación y documentación.
--   [[IA en el Desarrollo]]: Concepto general de cómo la inteligencia artificial puede asistir en el proceso de desarrollo y creatividad.
--   [[Generación de Contenido]]: Cómo las herramientas de IA pueden ayudar a crear activos visuales para eventos o marketing.
+-   [[notebooklm]]: Otra herramienta de Google basada en IA para investigación y documentación.
+-   [[ia-en-el-desarrollo]]: Concepto general de cómo la inteligencia artificial puede asistir en el proceso de desarrollo y creatividad.
+-   [[generacion-de-contenido]]: Cómo las herramientas de IA pueden ayudar a crear activos visuales para eventos o marketing.
 
 > [!note] Documento creado con información de Gemini
 > *Última actualización: 2026-04-27*

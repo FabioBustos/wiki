@@ -22,7 +22,7 @@ obsidian_ui: true
 
 ## Uso en el Sistema de Ticketera
 
-En nuestro proyecto, Storybook se utiliza principalmente para el desarrollo y la documentación de los componentes de UI del frontend [[Next.js]]. Esto incluye elementos como botones, formularios, tarjetas de eventos, selectores de fecha, etc.
+En nuestro proyecto, Storybook se utiliza principalmente para el desarrollo y la documentación de los componentes de UI del frontend [[nextjs]]. Esto incluye elementos como botones, formularios, tarjetas de eventos, selectores de fecha, etc.
 
 ### Arquitectura de Integración
 
@@ -40,7 +40,7 @@ graph TD
 ### Flujo de Trabajo con Storybook
 
 1.  **Diseño**: El equipo de diseño define la apariencia y el comportamiento de los componentes.
-2.  **Desarrollo**: Los desarrolladores implementan los componentes en [[Next.js]] y crean "stories" en Storybook para cada estado y variación.
+2.  **Desarrollo**: Los desarrolladores implementan los componentes en [[nextjs]] y crean "stories" en Storybook para cada estado y variación.
 3.  **Revisión**: Diseñadores, desarrolladores y stakeholders revisan los componentes en Storybook, proporcionando feedback.
 4.  **Testing**: Se utilizan addons de Storybook para pruebas de accesibilidad, interacción y regresión visual.
 5.  **Documentación**: Storybook sirve como la fuente de verdad para la documentación de los componentes, accesible para todo el equipo.
@@ -64,11 +64,11 @@ graph TD
 
 ## Integración con Otros Servicios
 
--   **[[Next.js]]**: Framework principal para el desarrollo del frontend.
--   **[[MCP]]**: Storybook puede ser expuesto como un [[Servidor MCP]] local, permitiendo a los agentes de IA interactuar con los componentes de UI.
--   **[[Agentes-especializados]]**: Un `@ux-ui-developer` podría usar Storybook para generar o modificar componentes.
--   **[[CI-CD]]**: Integración en pipelines para pruebas de regresión visual automatizadas.
--   **[[Sentry]]**: Para monitorear errores que puedan ocurrir durante la interacción con los componentes en Storybook (aunque menos común que en la aplicación real).
+-   **[[nextjs]]**: Framework principal para el desarrollo del frontend.
+-   **[[mcp]]**: Storybook puede ser expuesto como un [[servidor-mcp]] local, permitiendo a los [[agentes-especializados]] interactuar con los componentes de UI.
+-   **[[agentes-especializados]]**: Un `@ux-ui-developer` podría usar Storybook para generar o modificar componentes.
+-   **[[ci-cd]]**: Integración en pipelines para pruebas de regresión visual automatizadas.
+-   **[[sentry]]**: Para monitorear errores que puedan ocurrir durante la interacción con los componentes en Storybook (aunque menos común que en la aplicación real).
 
 ## Mejores Prácticas de Implementación
 
@@ -102,11 +102,11 @@ graph TD
 
 ## Relación con Otros Conceptos del Sistema
 
-- [[Next.js]] - Framework principal del frontend donde se usan los componentes.
-- [[Atomic Design]] - Metodología de diseño que se alinea bien con el desarrollo de componentes en Storybook.
-- [[UX/UI Design]] - Herramienta clave para la implementación y validación del diseño.
-- [[Calidad-de-Código]] - Contribuye a la calidad al facilitar el testing y la consistencia.
-- [[Documentación-de-proyecto]] - Sirve como documentación viva de los componentes de UI.
+- [[nextjs]] - Framework principal del frontend donde se usan los componentes.
+- [[atomic-design]] - Metodología de diseño que se alinea bien con el desarrollo de componentes en Storybook.
+- [[ui-ux-design]] - Herramienta clave para la implementación y validación del diseño.
+- [[calidad-de-codigo]] - Contribuye a la calidad al facilitar el testing y la consistencia.
+- [[documentacion-de-proyecto]] - Sirve como documentación viva de los componentes de UI.
 
 > [!note] Documento creado siguiendo las mejores prácticas de Obsidian Flavored Markdown
 > *Última actualización: 2026-04-27*

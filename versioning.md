@@ -9,22 +9,22 @@ alias: [Versionamiento de Objetos]
 
 ## Definición
 
-El **Versioning** (versionamiento) es una característica de los servicios de almacenamiento de objetos como [[cloudflare-r2]] y Amazon S3 que permite mantener múltiples versiones de un [[objeto|objeto]] en el mismo [[bucket|bucket]]. Cada vez que se modifica o elimina un [[objeto|objeto]], se crea una nueva versión en lugar de sobrescribir o eliminar permanentemente la versión anterior.
+El **Versioning** (versionamiento) es una característica de los servicios de almacenamiento de objetos como [[cloudflare-r2]] y Amazon S3 que permite mantener múltiples versiones de un [[objeto]] en el mismo [[bucket]]. Cada vez que se modifica o elimina un [[objeto]], se crea una nueva versión en lugar de sobrescribir o eliminar permanentemente la versión anterior.
 
 ## Cómo Funciona
 
-Cuando el versionamiento está habilitado en un [[bucket|bucket]]:
+Cuando el versionamiento está habilitado en un [[bucket]]:
 
--   **Subida de un Objeto**: Si subes un [[objeto|objeto]] con la misma [[clave-key|clave]] que uno existente, el nuevo [[objeto|objeto]] se convierte en la versión actual, y la versión anterior se conserva como una versión no actual.
--   **Eliminación de un Objeto**: Cuando eliminas un [[objeto|objeto]], el servicio de almacenamiento no lo elimina permanentemente. En su lugar, inserta un "marcador de eliminación" (delete marker) como la nueva versión actual. Las versiones anteriores del [[objeto|objeto]] se conservan. Para eliminar permanentemente un [[objeto|objeto]], se debe especificar su ID de versión.
+-   **Subida de un Objeto**: Si subes un [[objeto]] con la misma [[clave-key]] que uno existente, el nuevo [[objeto]] se convierte en la versión actual, y la versión anterior se conserva como una versión no actual.
+-   **Eliminación de un Objeto**: Cuando eliminas un [[objeto]], el servicio de almacenamiento no lo elimina permanentemente. En su lugar, inserta un "marcador de eliminación" (delete marker) como la nueva versión actual. Las versiones anteriores del [[objeto]] se conservan. Para eliminar permanentemente un [[objeto]], se debe especificar su ID de versión.
 
-Cada versión de un [[objeto|objeto]] tiene un ID de versión único, además de su [[clave-key|clave]].
+Cada versión de un [[objeto]] tiene un ID de versión único, además de su [[clave-key]].
 
 ## Beneficios Clave
 
 -   **Protección contra Eliminación Accidental**: Permite recuperar [[objeto|objetos]] eliminados accidentalmente.
 -   **Protección contra Sobrescritura Accidental**: Permite restaurar versiones anteriores de [[objeto|objetos]] que fueron sobrescritos.
--   **Historial de Cambios**: Proporciona un historial completo de todas las modificaciones realizadas a un [[objeto|objeto]].
+-   **Historial de Cambios**: Proporciona un historial completo de todas las modificaciones realizadas a un [[objeto]].
 -   **Recuperación de Desastres**: Facilita la recuperación de datos en caso de corrupción o errores de aplicación.
 
 ## Uso en el Sistema de Ticketera (Potencial)
@@ -37,7 +37,7 @@ El versionamiento sería particularmente útil para [[objeto|objetos]] críticos
 
 ## Consideraciones
 
--   **Costo**: Almacenar múltiples versiones de [[objeto|objetos]] aumenta el uso de almacenamiento y, por lo tanto, los costos. Las [[politica-de-ciclo-de-vida|políticas de ciclo de vida]] pueden ayudar a gestionar esto, eliminando versiones antiguas después de un tiempo.
+-   **Costo**: Almacenar múltiples versiones de [[objeto|objetos]] aumenta el uso de almacenamiento y, por lo tanto, los costos. Las [[politica-de-ciclo-de-vida]] pueden ayudar a gestionar esto, eliminando versiones antiguas después de un tiempo.
 -   **Complejidad**: La gestión de versiones puede añadir complejidad a las operaciones de lectura y escritura si no se maneja correctamente.
 
 ## Relación con Otros Conceptos
